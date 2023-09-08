@@ -14,6 +14,14 @@
 		1986B4BD2AA626AE0094843D /* KK_GymAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1986B4BC2AA626AE0094843D /* KK_GymAppTests.swift */; };
 		1986B4C72AA626AE0094843D /* KK_GymAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1986B4C62AA626AE0094843D /* KK_GymAppUITests.swift */; };
 		1986B4C92AA626AE0094843D /* KK_GymAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1986B4C82AA626AE0094843D /* KK_GymAppUITestsLaunchTests.swift */; };
+		1986B4D72AA627140094843D /* AppButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1986B4D62AA627140094843D /* AppButton.swift */; };
+		1986B4DA2AA627DE0094843D /* ViewHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1986B4D92AA627DE0094843D /* ViewHelper.swift */; };
+		19E1E51E2AA62CAA00D942B7 /* AppTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19E1E51D2AA62CAA00D942B7 /* AppTextField.swift */; };
+		19E1E5212AA62EBD00D942B7 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19E1E5202AA62EBD00D942B7 /* LoginView.swift */; };
+		19E1E5262AA6321300D942B7 /* config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19E1E5252AA6321300D942B7 /* config.swift */; };
+		19E1E5452AA916EE00D942B7 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 19E1E5442AA916EE00D942B7 /* RealmSwift */; };
+		19E1E5482AA9172A00D942B7 /* Exercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19E1E5472AA9172A00D942B7 /* Exercise.swift */; };
+		19E1E54B2AAA14B200D942B7 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 19E1E54A2AAA14B200D942B7 /* Realm */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +52,12 @@
 		1986B4C22AA626AE0094843D /* KK_GymAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KK_GymAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1986B4C62AA626AE0094843D /* KK_GymAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KK_GymAppUITests.swift; sourceTree = "<group>"; };
 		1986B4C82AA626AE0094843D /* KK_GymAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KK_GymAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		1986B4D62AA627140094843D /* AppButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppButton.swift; sourceTree = "<group>"; };
+		1986B4D92AA627DE0094843D /* ViewHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewHelper.swift; sourceTree = "<group>"; };
+		19E1E51D2AA62CAA00D942B7 /* AppTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTextField.swift; sourceTree = "<group>"; };
+		19E1E5202AA62EBD00D942B7 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		19E1E5252AA6321300D942B7 /* config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = config.swift; sourceTree = "<group>"; };
+		19E1E5472AA9172A00D942B7 /* Exercise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exercise.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +65,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				19E1E54B2AAA14B200D942B7 /* Realm in Frameworks */,
+				19E1E5452AA916EE00D942B7 /* RealmSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -75,9 +91,11 @@
 			isa = PBXGroup;
 			children = (
 				1986B4AA2AA626AD0094843D /* KK_GymApp */,
+				1986B4DB2AA62B2E0094843D /* Framework */,
 				1986B4BB2AA626AE0094843D /* KK_GymAppTests */,
 				1986B4C52AA626AE0094843D /* KK_GymAppUITests */,
 				1986B4A92AA626AD0094843D /* Products */,
+				19E1E5492AAA14B200D942B7 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -94,8 +112,13 @@
 		1986B4AA2AA626AD0094843D /* KK_GymApp */ = {
 			isa = PBXGroup;
 			children = (
+				19E1E5462AA9171000D942B7 /* Model */,
+				19E1E51F2AA62EAA00D942B7 /* Account */,
 				1986B4AB2AA626AD0094843D /* KK_GymAppApp.swift */,
 				1986B4AD2AA626AD0094843D /* ContentView.swift */,
+				1986B4D52AA626FB0094843D /* Component */,
+				1986B4D82AA627C80094843D /* Helper */,
+				19E1E5222AA631DD00D942B7 /* Config */,
 				1986B4AF2AA626AE0094843D /* Assets.xcassets */,
 				1986B4B12AA626AE0094843D /* Preview Content */,
 			);
@@ -127,6 +150,62 @@
 			path = KK_GymAppUITests;
 			sourceTree = "<group>";
 		};
+		1986B4D52AA626FB0094843D /* Component */ = {
+			isa = PBXGroup;
+			children = (
+				1986B4D62AA627140094843D /* AppButton.swift */,
+				19E1E51D2AA62CAA00D942B7 /* AppTextField.swift */,
+			);
+			path = Component;
+			sourceTree = "<group>";
+		};
+		1986B4D82AA627C80094843D /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				1986B4D92AA627DE0094843D /* ViewHelper.swift */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
+		1986B4DB2AA62B2E0094843D /* Framework */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Framework;
+			path = KK_GymApp;
+			sourceTree = "<group>";
+		};
+		19E1E51F2AA62EAA00D942B7 /* Account */ = {
+			isa = PBXGroup;
+			children = (
+				19E1E5202AA62EBD00D942B7 /* LoginView.swift */,
+			);
+			path = Account;
+			sourceTree = "<group>";
+		};
+		19E1E5222AA631DD00D942B7 /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				19E1E5252AA6321300D942B7 /* config.swift */,
+			);
+			path = Config;
+			sourceTree = "<group>";
+		};
+		19E1E5462AA9171000D942B7 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				19E1E5472AA9172A00D942B7 /* Exercise.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		19E1E5492AAA14B200D942B7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -143,6 +222,10 @@
 			dependencies = (
 			);
 			name = KK_GymApp;
+			packageProductDependencies = (
+				19E1E5442AA916EE00D942B7 /* RealmSwift */,
+				19E1E54A2AAA14B200D942B7 /* Realm */,
+			);
 			productName = KK_GymApp;
 			productReference = 1986B4A82AA626AD0094843D /* KK_GymApp.app */;
 			productType = "com.apple.product-type.application";
@@ -215,6 +298,9 @@
 				Base,
 			);
 			mainGroup = 1986B49F2AA626AD0094843D;
+			packageReferences = (
+				19E1E5432AA916EE00D942B7 /* XCRemoteSwiftPackageReference "realm-swift" */,
+			);
 			productRefGroup = 1986B4A92AA626AD0094843D /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -257,8 +343,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				19E1E5212AA62EBD00D942B7 /* LoginView.swift in Sources */,
+				19E1E5482AA9172A00D942B7 /* Exercise.swift in Sources */,
+				1986B4D72AA627140094843D /* AppButton.swift in Sources */,
 				1986B4AE2AA626AD0094843D /* ContentView.swift in Sources */,
+				1986B4DA2AA627DE0094843D /* ViewHelper.swift in Sources */,
+				19E1E5262AA6321300D942B7 /* config.swift in Sources */,
 				1986B4AC2AA626AD0094843D /* KK_GymAppApp.swift in Sources */,
+				19E1E51E2AA62CAA00D942B7 /* AppTextField.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -425,16 +517,18 @@
 				DEVELOPMENT_TEAM = HNSKUL3WR3;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.healthcare-fitness";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.kkarpiak.KK-GymApp";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -454,16 +548,18 @@
 				DEVELOPMENT_TEAM = HNSKUL3WR3;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.healthcare-fitness";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.kkarpiak.KK-GymApp";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -588,6 +684,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		19E1E5432AA916EE00D942B7 /* XCRemoteSwiftPackageReference "realm-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/realm-swift.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		19E1E5442AA916EE00D942B7 /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 19E1E5432AA916EE00D942B7 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = RealmSwift;
+		};
+		19E1E54A2AAA14B200D942B7 /* Realm */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 19E1E5432AA916EE00D942B7 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = Realm;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 1986B4A02AA626AD0094843D /* Project object */;
 }

@@ -6,17 +6,20 @@
 //
 
 import SwiftUI
+import RealmSwift
 
 struct ContentView: View {
+  
+  @State var user: String = ""
+  
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
-        }
-        .padding()
+      if user.isEmpty {
+        Text("must Login")
+      } else {
+        Text("Login")
+      }
     }
+    
 }
 
 #Preview {

@@ -16,63 +16,58 @@ class Exercise: Object {
   @Persisted var videoURL: String
   @Persisted var muscleGroups: Int
   // Create relationships by pointing an Object field to another Class
-  //    @Persisted var dogs: List<Dog>
+  // @Persisted var dogs: List<Dog>
+}
+
+
+class ExercisePlan: Object { 
+  @Persisted var exerciseID: Exercise?
+  @Persisted var series: String // [{ id: value, repeat: 3, weight: 35.5 }]
 }
 
 
 class Muscle: Object {
   @Persisted(primaryKey: true) var _id: String
   @Persisted var name: String
-  // Create relationships by pointing an Object field to another Class
-  //    @Persisted var dogs: List<Dog>
 }
 
-/*
- "ExerciseID": "1",
-       "Name": "Przysiad",
-       "Category": "Siłowe",
-       "Description": "Opis ćwiczenia przysiadu.",
-       "VideoURL": "URL do wideo z demonstracją ćwiczenia",
-       "MuscleGroups": ["Nogi", "Pośladki"]
- 
- 
- {
-   "Muscles": [
-     {
-       "MuscleGroupID": "1",
-       "Name": "Klatka piersiowa"
-     },
-     {
-       "MuscleGroupID": "2",
-       "Name": "Plecy"
-     },
-     {
-       "MuscleGroupID": "3",
-       "Name": "Nogi"
-     },
-     {
-       "MuscleGroupID": "4",
-       "Name": "Ramiona"
-     },
-     {
-       "MuscleGroupID": "5",
-       "Name": "Brzuch"
-     },
-     {
-       "MuscleGroupID": "6",
-       "Name": "Pośladki"
-     },
-     {
-       "MuscleGroupID": "7",
-       "Name": "Biceps"
-     },
-     {
-       "MuscleGroupID": "8",
-       "Name": "Triceps"
-     }
-   ]
- }
- 
- */
 
+class User: Object {  
+  @Persisted(primaryKey: true) var _id: ObjectId  // (Unikalny identyfikator użytkownika)
+  @Persisted var name: String?     // (Imię i nazwisko użytkownika)
+  @Persisted var email: String?    // (Adres e-mail użytkownika)
+  @Persisted var age: String?      // (Wiek użytkownika)
+  @Persisted var gender: String?   // (Płeć użytkownika)
+  @Persisted var height: String?   // (Wzrost użytkownika)
+  @Persisted var weight: String?   // (Waga użytkownika)
+  @Persisted var profilePicture: String?  // (Ścieżka do profilowego zdjęcia użytkownika)
+//  @Persisted var trainingPlans: List<TrainingPlan> = .init()
+//  @Persisted var historyTrening: List<TrainingHistory> = .init()
+}
+
+
+class  TrainingPlan: Object {  
+  @Persisted(primaryKey: true) var _id: String  // (Unikalny identyfikator planu)
+  @Persisted var name: String       // (Nazwa planu)
+  @Persisted var desc: String       // (Opis planu)
+  @Persisted var duration: String   // (Czas trwania planu w dniach)
+  @Persisted var exercises: List<ExercisePlan>  // (Tablica z identyfikatorami ćwiczeń w planie)
+}
+
+
+class TrainingHistory: Object {  
+  @Persisted(primaryKey: true) var WorkoutID: String  //(Unikalny identyfikator treningu)
+  @Persisted var UserID:    User?          //(ID użytkownika, który wykonał trening)
+  @Persisted var PlanID:    ExercisePlan?  //(ID planu treningowego, który został wykonany)
+  @Persisted var Date:      String?        //(Data wykonania treningu)
+  @Persisted var Duration:  String?        //(Czas trwania treningu)
+  @Persisted var CaloriesBurned:      String?  //(Spalone kalorie podczas treningu)
+  @Persisted var ExercisesPerformed:  String?  //(Tablica z informacjami o wykonanych ćwiczeniach w treningu, np. identyfikator ćwiczenia, liczba powtórzeń, obciążenie)  
+}
+
+
+class FavoriteExercises: Object {  
+  @Persisted var UserID:     String // (ID użytkownika, który dodał ćwiczenie do ulubionych)
+  @Persisted var ExerciseID: String // (ID ćwiczenia dodanego do ulubionych)
+}
 

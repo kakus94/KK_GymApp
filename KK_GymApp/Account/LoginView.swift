@@ -16,6 +16,8 @@ struct LoginView: View {
         
         AppTextField(name: "Password", placeholder: "", text: .constant(""))
         
+        Spacer()
+        
         AppButton(action: {}) {
           Text("Login").maxWidth()
         }
@@ -41,9 +43,12 @@ struct LoginView: View {
     }
 }
 
-#Preview {
+struct LoginViewProvider_Previews: PreviewProvider {
+  static var previews: some View {
     LoginView()
+  }
 }
+
 
 struct LogoApp: View {
   var body: some View {

@@ -29,12 +29,14 @@ struct AppTextField: View {
     }
 }
 
-#Preview {
-  AppTextField(name: "Login",
-               placeholder: "Register",
-               text: .constant(""))
-    
+struct AppTextFieldProvider_Previews: PreviewProvider {
+  static var previews: some View {
+    AppTextField(name: "Login",
+                 placeholder: "Register",
+                 text: .constant(""))
+  }
 }
+
 
 
 struct WhiteBorder: TextFieldStyle {

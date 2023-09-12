@@ -30,21 +30,22 @@ struct AppButton<Content: View>: View {
     }
 }
 
-
-
-#Preview {
-  VStack {
-    AppButton(action: { print("button action " )}) {
-      Text("Login")
-        .maxWidth()
-    }
-    
-    
-    AppButton(action: { print("button action " )}) {
-      Text("Login")
-        .maxWidth()
+struct AppButtonProvider_Previews: PreviewProvider {
+  static var previews: some View {
+    VStack {
+      AppButton(action: { print("button action " )}) {
+        Text("Login")
+          .maxWidth()
+      }
+      
+      
+      AppButton(action: { print("button action " )}) {
+        Text("Login")
+          .maxWidth()
+      }
     }
   }
 }
+
 
 

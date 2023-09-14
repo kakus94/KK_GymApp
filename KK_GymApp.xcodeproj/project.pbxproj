@@ -23,6 +23,9 @@
 		19E1E5482AA9172A00D942B7 /* Exercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19E1E5472AA9172A00D942B7 /* Exercise.swift */; };
 		19E1E54B2AAA14B200D942B7 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 19E1E54A2AAA14B200D942B7 /* Realm */; };
 		8E5A30A32AB3233E00E07869 /* Muscule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5A30A22AB3233E00E07869 /* Muscule.swift */; };
+		8E5A30A62AB3309100E07869 /* CreateTrening.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5A30A52AB3309100E07869 /* CreateTrening.swift */; };
+		8E5A30A82AB330A800E07869 /* TreningList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5A30A72AB330A800E07869 /* TreningList.swift */; };
+		8E5A30AA2AB3316F00E07869 /* MockRealms.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5A30A92AB3316F00E07869 /* MockRealms.swift */; };
 		8E7F2B492AB2F1D200013ACD /* SecretFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E7F2B482AB2F1D200013ACD /* SecretFile.swift */; };
 		8E86BDCC2AB082D0009C5DD0 /* DevView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E86BDCB2AB082D0009C5DD0 /* DevView.swift */; };
 		8E86BDCE2AB085A3009C5DD0 /* AddExercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E86BDCD2AB085A3009C5DD0 /* AddExercise.swift */; };
@@ -63,6 +66,9 @@
 		19E1E5252AA6321300D942B7 /* config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = config.swift; sourceTree = "<group>"; };
 		19E1E5472AA9172A00D942B7 /* Exercise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exercise.swift; sourceTree = "<group>"; };
 		8E5A30A22AB3233E00E07869 /* Muscule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Muscule.swift; sourceTree = "<group>"; };
+		8E5A30A52AB3309100E07869 /* CreateTrening.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTrening.swift; sourceTree = "<group>"; };
+		8E5A30A72AB330A800E07869 /* TreningList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreningList.swift; sourceTree = "<group>"; };
+		8E5A30A92AB3316F00E07869 /* MockRealms.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockRealms.swift; sourceTree = "<group>"; };
 		8E7F2B482AB2F1D200013ACD /* SecretFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecretFile.swift; sourceTree = "<group>"; };
 		8E86BDCB2AB082D0009C5DD0 /* DevView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DevView.swift; sourceTree = "<group>"; };
 		8E86BDCD2AB085A3009C5DD0 /* AddExercise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddExercise.swift; sourceTree = "<group>"; };
@@ -121,6 +127,7 @@
 			isa = PBXGroup;
 			children = (
 				19E1E5462AA9171000D942B7 /* Model */,
+				8E5A30A42AB3306F00E07869 /* View */,
 				19E1E51F2AA62EAA00D942B7 /* Account */,
 				1986B4AB2AA626AD0094843D /* KK_GymAppApp.swift */,
 				1986B4AD2AA626AD0094843D /* ContentView.swift */,
@@ -205,6 +212,7 @@
 			children = (
 				19E1E5472AA9172A00D942B7 /* Exercise.swift */,
 				8E5A30A22AB3233E00E07869 /* Muscule.swift */,
+				8E5A30A92AB3316F00E07869 /* MockRealms.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -214,6 +222,15 @@
 			children = (
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8E5A30A42AB3306F00E07869 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				8E5A30A52AB3309100E07869 /* CreateTrening.swift */,
+				8E5A30A72AB330A800E07869 /* TreningList.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		8E86BDCA2AB0814F009C5DD0 /* DevHelper */ = {
@@ -364,6 +381,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				19E1E5212AA62EBD00D942B7 /* LoginView.swift in Sources */,
+				8E5A30A82AB330A800E07869 /* TreningList.swift in Sources */,
 				19E1E5482AA9172A00D942B7 /* Exercise.swift in Sources */,
 				1986B4D72AA627140094843D /* AppButton.swift in Sources */,
 				1986B4AE2AA626AD0094843D /* ContentView.swift in Sources */,
@@ -373,6 +391,8 @@
 				8E86BDCC2AB082D0009C5DD0 /* DevView.swift in Sources */,
 				1986B4AC2AA626AD0094843D /* KK_GymAppApp.swift in Sources */,
 				8E7F2B492AB2F1D200013ACD /* SecretFile.swift in Sources */,
+				8E5A30AA2AB3316F00E07869 /* MockRealms.swift in Sources */,
+				8E5A30A62AB3309100E07869 /* CreateTrening.swift in Sources */,
 				8E5A30A32AB3233E00E07869 /* Muscule.swift in Sources */,
 				19E1E51E2AA62CAA00D942B7 /* AppTextField.swift in Sources */,
 			);

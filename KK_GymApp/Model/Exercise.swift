@@ -31,7 +31,7 @@ class UserApp: Object {
 }
 
 
-class Exercise: Object {
+class Exercise: Object, Identifiable {
   @Persisted(primaryKey: true) var _id: ObjectId
   @Persisted var name: String
   @Persisted var category: String

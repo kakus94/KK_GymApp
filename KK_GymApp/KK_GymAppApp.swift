@@ -8,44 +8,22 @@
 import SwiftUI
 import RealmSwift
 
+var realmApp: RealmSwift.App!
+
 @main
 struct KK_GymAppApp: SwiftUI.App {
   
-  
-  @State var devMode: Bool 
-  let app = App(id: api)
-  
-  
-  
-  init() { 
+  init() {
     self.devMode = CommandLine.arguments.contains("-devMode")
     
-    var syncUser: RealmSwift.User?
-    self.app.login(credentials: Credentials.anonymous) { result in 
-      switch result {
-        case .success(let user):
-          syncUser = user
-          
-          let realm = try! Realm()
-          let user = User()
-          
-          user._id = ObjectId.generate()
-          user.name = "Kamil"
-          user.email = "1@2.com"
-          user.age = "29"
-          user.gender = "M"
-          user.height = "187"
-          user.weight = "90"
-          
-          try! realm.write({ 
-            realm.add(user)
-          })
-          
-        case .failure(let failure):
-          print(failure.localizedDescription)
-      }
-    }
+    realmApp = RealmSwift.App(id: apiKey)
+//    realmApp = RealmSwift.App()
+    
+    
   }
+  
+  
+  @State var devMode: Bool 
   
   var body: some Scene {
     WindowGroup {
@@ -56,6 +34,9 @@ struct KK_GymAppApp: SwiftUI.App {
           }
       } else { 
         ContentView()
+          .onAppear { 
+            print("Developer Mode-> False") 
+          }
       }
       
     }

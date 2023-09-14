@@ -22,9 +22,9 @@
 		19E1E5452AA916EE00D942B7 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 19E1E5442AA916EE00D942B7 /* RealmSwift */; };
 		19E1E5482AA9172A00D942B7 /* Exercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19E1E5472AA9172A00D942B7 /* Exercise.swift */; };
 		19E1E54B2AAA14B200D942B7 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 19E1E54A2AAA14B200D942B7 /* Realm */; };
+		8E7F2B492AB2F1D200013ACD /* SecretFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E7F2B482AB2F1D200013ACD /* SecretFile.swift */; };
 		8E86BDCC2AB082D0009C5DD0 /* DevView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E86BDCB2AB082D0009C5DD0 /* DevView.swift */; };
 		8E86BDCE2AB085A3009C5DD0 /* AddExercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E86BDCD2AB085A3009C5DD0 /* AddExercise.swift */; };
-		8E86BDD02AB08C12009C5DD0 /* SecretFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E86BDCF2AB08C12009C5DD0 /* SecretFile.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,9 +61,9 @@
 		19E1E5202AA62EBD00D942B7 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		19E1E5252AA6321300D942B7 /* config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = config.swift; sourceTree = "<group>"; };
 		19E1E5472AA9172A00D942B7 /* Exercise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exercise.swift; sourceTree = "<group>"; };
+		8E7F2B482AB2F1D200013ACD /* SecretFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecretFile.swift; sourceTree = "<group>"; };
 		8E86BDCB2AB082D0009C5DD0 /* DevView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DevView.swift; sourceTree = "<group>"; };
 		8E86BDCD2AB085A3009C5DD0 /* AddExercise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddExercise.swift; sourceTree = "<group>"; };
-		8E86BDCF2AB08C12009C5DD0 /* SecretFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecretFile.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -218,7 +218,7 @@
 			children = (
 				8E86BDCB2AB082D0009C5DD0 /* DevView.swift */,
 				8E86BDCD2AB085A3009C5DD0 /* AddExercise.swift */,
-				8E86BDCF2AB08C12009C5DD0 /* SecretFile.swift */,
+				8E7F2B482AB2F1D200013ACD /* SecretFile.swift */,
 			);
 			path = DevHelper;
 			sourceTree = "<group>";
@@ -360,7 +360,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8E86BDD02AB08C12009C5DD0 /* SecretFile.swift in Sources */,
 				19E1E5212AA62EBD00D942B7 /* LoginView.swift in Sources */,
 				19E1E5482AA9172A00D942B7 /* Exercise.swift in Sources */,
 				1986B4D72AA627140094843D /* AppButton.swift in Sources */,
@@ -370,6 +369,7 @@
 				19E1E5262AA6321300D942B7 /* config.swift in Sources */,
 				8E86BDCC2AB082D0009C5DD0 /* DevView.swift in Sources */,
 				1986B4AC2AA626AD0094843D /* KK_GymAppApp.swift in Sources */,
+				8E7F2B492AB2F1D200013ACD /* SecretFile.swift in Sources */,
 				19E1E51E2AA62CAA00D942B7 /* AppTextField.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

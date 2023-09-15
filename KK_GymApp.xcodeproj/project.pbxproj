@@ -33,6 +33,7 @@
 		8EA492BC2AB44EA20092884F /* ExColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EA492BB2AB44EA20092884F /* ExColor.swift */; };
 		8EA492BF2AB468820092884F /* HistoryTreningTile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EA492BE2AB468820092884F /* HistoryTreningTile.swift */; };
 		8EA492C12AB468E40092884F /* ExView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EA492C02AB468E40092884F /* ExView.swift */; };
+		8EA492C32AB473E30092884F /* HistoryTreningDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EA492C22AB473E30092884F /* HistoryTreningDetailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,6 +81,7 @@
 		8EA492BB2AB44EA20092884F /* ExColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExColor.swift; sourceTree = "<group>"; };
 		8EA492BE2AB468820092884F /* HistoryTreningTile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTreningTile.swift; sourceTree = "<group>"; };
 		8EA492C02AB468E40092884F /* ExView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExView.swift; sourceTree = "<group>"; };
+		8EA492C22AB473E30092884F /* HistoryTreningDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTreningDetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -181,6 +183,7 @@
 				19E1E51D2AA62CAA00D942B7 /* AppTextField.swift */,
 				8E67DE5A2AB434D30066A8E5 /* TreningTile.swift */,
 				8EA492BE2AB468820092884F /* HistoryTreningTile.swift */,
+				8EA492C22AB473E30092884F /* HistoryTreningDetailView.swift */,
 			);
 			path = Component;
 			sourceTree = "<group>";
@@ -404,6 +407,7 @@
 				19E1E5262AA6321300D942B7 /* config.swift in Sources */,
 				8E86BDCC2AB082D0009C5DD0 /* DevView.swift in Sources */,
 				1986B4AC2AA626AD0094843D /* KK_GymAppApp.swift in Sources */,
+				8EA492C32AB473E30092884F /* HistoryTreningDetailView.swift in Sources */,
 				8E7F2B492AB2F1D200013ACD /* SecretFile.swift in Sources */,
 				8E5A30AA2AB3316F00E07869 /* MockRealms.swift in Sources */,
 				8EA492C12AB468E40092884F /* ExView.swift in Sources */,

@@ -147,3 +147,27 @@ enum Muscles: Int, PersistableEnum, CaseIterable {
 
 
 
+extension MuscleGroup { 
+  var name: String { 
+    switch self {
+      case .chest:
+        return "Klata"
+      case .back:
+        return "Plecy"
+      case .legs:
+        return "Nogi"
+      case .arms:
+        return "Ramiona"
+      case .abdomen:
+        return "Brzuch"
+      case .neckAndShoulders:
+        return "szyja i ramiona"
+      case .intercostalAndRespiratoryMuscles:
+        return "Mięśnie międzyżebrowe i oddechowe"
+      case .pelvis:
+        return "Posiad"
+      case .calves:
+        return "Łydka"
+    }
+  }
+}

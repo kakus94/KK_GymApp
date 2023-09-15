@@ -32,48 +32,21 @@ struct TreningTile: View {
         }
         .appPadding(edge: [.horizontal,.top])
         
-        Spacer()
         
         Text(mainMuscule)
           .maxWidth()
           .font(.subheadline)
-        
-        Spacer()
+          .appPadding(.small)
           
-        foo
-          .font(.caption)
+        DetailLine(timeComplite: timeComplite, 
+                   countEx: countEx,
+                   repeatEx: repeatEx,
+                   volume: volume)   
           .appPadding(edge: [.horizontal, .bottom])
       }
       
     }
   }
-  
-  
-  var foo: some View { 
-    HStack { 
-      HStack(spacing: 3){ 
-        Image(systemName: "clock")
-        Text(timeComplite)        
-      }
-      .maxWidth()
-      HStack(spacing: 3){ 
-        Image(systemName: "dumbbell")
-        Text("\(countEx)")        
-      }
-      .maxWidth()
-
-      HStack(spacing: 3){ 
-        Image(systemName: "figure.strengthtraining.traditional")
-        Text("\(repeatEx)")        
-      }
-      .maxWidth()
-      HStack(spacing: 3){ 
-        Image(systemName: "scalemass")
-        Text("\(volume.description)")        
-      }
-      .maxWidth()
-    }    
-  }  
 }
 
 struct TreningTile_Previews: PreviewProvider {
@@ -146,4 +119,61 @@ struct AppTile<Content: View >:  View {
     .frameTile
   }
   
+}
+
+
+struct DetailLine: View { 
+  
+  var timeComplite: String?
+  var countEx: Int?
+  var repeatEx: Int?
+  var volume: Int?
+  var restTime: String?
+  
+  var body: some View {
+    HStack { 
+      
+      if let timeComplite {
+        HStack(spacing: 3){ 
+          Image(systemName: "clock")
+          Text(timeComplite)        
+        }
+        .maxWidth()
+      }
+      
+      if let restTime {
+        HStack(spacing: 3){ 
+          Image(systemName: "hourglass")
+          Text(restTime)        
+        }
+        .maxWidth()
+      }
+      
+      if let countEx {
+        HStack(spacing: 3){ 
+          Image(systemName: "dumbbell")
+          Text("\(countEx)")        
+        }
+        .maxWidth()
+      }
+      
+      if let repeatEx {
+        HStack(spacing: 3){ 
+          Image(systemName: "figure.strengthtraining.traditional")
+          Text("\(repeatEx)")        
+        }
+        .maxWidth()
+      }
+      
+      if let volume { 
+        HStack(spacing: 3){ 
+          Image(systemName: "scalemass")
+          Text("\(volume.description)")        
+        }
+        .maxWidth()
+      }
+    }
+    
+    .font(.caption)
+  }
 }

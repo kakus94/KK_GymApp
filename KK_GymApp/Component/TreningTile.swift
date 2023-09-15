@@ -18,7 +18,7 @@ struct TreningTile: View {
   var volume: Int
   
   var body: some View {
-    ZStack {
+    AppTile {
       VStack(spacing: 0) { 
         
         //Name
@@ -46,8 +46,6 @@ struct TreningTile: View {
       }
       
     }
-    .foregroundColor(Color.onSurfaceVariant_)
-    .frameTile
   }
   
   
@@ -125,8 +123,27 @@ fileprivate extension View {
   var frameTile: some View {    
     self 
       .maxWidth()
-      .frame(height: 90)
       .background(Color.surfaceVariant_)
       .cornerRadius(10)
   }
+}
+
+
+
+struct AppTile<Content: View >:  View { 
+  
+  var content: () -> Content 
+  
+  init(content: @escaping () -> Content) {
+    self.content = content
+  }
+  
+  var body: some View { 
+    ZStack {
+      content()
+    }
+    .foregroundColor(Color.onSurfaceVariant_)
+    .frameTile
+  }
+  
 }

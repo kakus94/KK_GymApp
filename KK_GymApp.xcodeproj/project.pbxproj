@@ -26,9 +26,12 @@
 		8E5A30A62AB3309100E07869 /* CreateTrening.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5A30A52AB3309100E07869 /* CreateTrening.swift */; };
 		8E5A30A82AB330A800E07869 /* TreningList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5A30A72AB330A800E07869 /* TreningList.swift */; };
 		8E5A30AA2AB3316F00E07869 /* MockRealms.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5A30A92AB3316F00E07869 /* MockRealms.swift */; };
+		8E67DE5B2AB434D30066A8E5 /* TreningTile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E67DE5A2AB434D30066A8E5 /* TreningTile.swift */; };
 		8E7F2B492AB2F1D200013ACD /* SecretFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E7F2B482AB2F1D200013ACD /* SecretFile.swift */; };
 		8E86BDCC2AB082D0009C5DD0 /* DevView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E86BDCB2AB082D0009C5DD0 /* DevView.swift */; };
 		8E86BDCE2AB085A3009C5DD0 /* AddExercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E86BDCD2AB085A3009C5DD0 /* AddExercise.swift */; };
+		8EA492BC2AB44EA20092884F /* ExColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EA492BB2AB44EA20092884F /* ExColor.swift */; };
+		8EA492BF2AB468820092884F /* HistoryTreningTile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EA492BE2AB468820092884F /* HistoryTreningTile.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,9 +72,12 @@
 		8E5A30A52AB3309100E07869 /* CreateTrening.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTrening.swift; sourceTree = "<group>"; };
 		8E5A30A72AB330A800E07869 /* TreningList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreningList.swift; sourceTree = "<group>"; };
 		8E5A30A92AB3316F00E07869 /* MockRealms.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockRealms.swift; sourceTree = "<group>"; };
+		8E67DE5A2AB434D30066A8E5 /* TreningTile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreningTile.swift; sourceTree = "<group>"; };
 		8E7F2B482AB2F1D200013ACD /* SecretFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecretFile.swift; sourceTree = "<group>"; };
 		8E86BDCB2AB082D0009C5DD0 /* DevView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DevView.swift; sourceTree = "<group>"; };
 		8E86BDCD2AB085A3009C5DD0 /* AddExercise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddExercise.swift; sourceTree = "<group>"; };
+		8EA492BB2AB44EA20092884F /* ExColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExColor.swift; sourceTree = "<group>"; };
+		8EA492BE2AB468820092884F /* HistoryTreningTile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTreningTile.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -171,6 +177,8 @@
 			children = (
 				1986B4D62AA627140094843D /* AppButton.swift */,
 				19E1E51D2AA62CAA00D942B7 /* AppTextField.swift */,
+				8E67DE5A2AB434D30066A8E5 /* TreningTile.swift */,
+				8EA492BE2AB468820092884F /* HistoryTreningTile.swift */,
 			);
 			path = Component;
 			sourceTree = "<group>";
@@ -179,6 +187,7 @@
 			isa = PBXGroup;
 			children = (
 				1986B4D92AA627DE0094843D /* ViewHelper.swift */,
+				8EA492BB2AB44EA20092884F /* ExColor.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -381,9 +390,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				19E1E5212AA62EBD00D942B7 /* LoginView.swift in Sources */,
+				8E67DE5B2AB434D30066A8E5 /* TreningTile.swift in Sources */,
 				8E5A30A82AB330A800E07869 /* TreningList.swift in Sources */,
 				19E1E5482AA9172A00D942B7 /* Exercise.swift in Sources */,
 				1986B4D72AA627140094843D /* AppButton.swift in Sources */,
+				8EA492BC2AB44EA20092884F /* ExColor.swift in Sources */,
 				1986B4AE2AA626AD0094843D /* ContentView.swift in Sources */,
 				1986B4DA2AA627DE0094843D /* ViewHelper.swift in Sources */,
 				8E86BDCE2AB085A3009C5DD0 /* AddExercise.swift in Sources */,
@@ -392,6 +403,7 @@
 				1986B4AC2AA626AD0094843D /* KK_GymAppApp.swift in Sources */,
 				8E7F2B492AB2F1D200013ACD /* SecretFile.swift in Sources */,
 				8E5A30AA2AB3316F00E07869 /* MockRealms.swift in Sources */,
+				8EA492BF2AB468820092884F /* HistoryTreningTile.swift in Sources */,
 				8E5A30A62AB3309100E07869 /* CreateTrening.swift in Sources */,
 				8E5A30A32AB3233E00E07869 /* Muscule.swift in Sources */,
 				19E1E51E2AA62CAA00D942B7 /* AppTextField.swift in Sources */,

@@ -21,11 +21,29 @@ struct DevView: View {
 //            Text(muscule.name)
 //          }
           
-//          NavigationLink { 
-//            AddExercise()
-//          } label: { 
-//            Text("Add Exercise")
-//          }
+          NavigationLink { 
+            AddExercise()
+          } label: { 
+            Text("Add Exercise")
+          }
+          
+          NavigationLink {
+            TreningTile(title: "Push",
+                        day: "Pierwszy dzien",
+                        mainMuscule: "Klata, Bic",
+                        timeComplite: "1:34",
+                        countEx: 6,
+                        repeatEx: 24,
+                        volume: 8765)
+          } label: {
+            Text("Ekran treningow")
+          }
+          
+          NavigationLink {
+            HistoryTreningTile()
+          } label: {
+            Text("Ekran historii")
+          }
 
         }
         .navigationTitle("Developer mode")

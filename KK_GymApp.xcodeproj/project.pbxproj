@@ -111,6 +111,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		191C85E32AB4E777003AC328 /* HistoryView */ = {
+			isa = PBXGroup;
+			children = (
+				8EA492BE2AB468820092884F /* HistoryTreningTile.swift */,
+				8EA492C22AB473E30092884F /* HistoryTreningDetailView.swift */,
+			);
+			path = HistoryView;
+			sourceTree = "<group>";
+		};
 		1986B49F2AA626AD0094843D = {
 			isa = PBXGroup;
 			children = (
@@ -182,8 +191,7 @@
 				1986B4D62AA627140094843D /* AppButton.swift */,
 				19E1E51D2AA62CAA00D942B7 /* AppTextField.swift */,
 				8E67DE5A2AB434D30066A8E5 /* TreningTile.swift */,
-				8EA492BE2AB468820092884F /* HistoryTreningTile.swift */,
-				8EA492C22AB473E30092884F /* HistoryTreningDetailView.swift */,
+				191C85E32AB4E777003AC328 /* HistoryView */,
 			);
 			path = Component;
 			sourceTree = "<group>";

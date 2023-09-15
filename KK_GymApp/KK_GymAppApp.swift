@@ -27,17 +27,20 @@ struct KK_GymAppApp: SwiftUI.App {
   
   var body: some Scene {
     WindowGroup {
-      if self.devMode {
-        DevView()
-          .onAppear { 
-            print("Developer Mode-> True") 
-          }
-      } else { 
-        ContentView()
-          .onAppear { 
-            print("Developer Mode-> False") 
-          }
-      }
+      DevView()
+      
+      
+//      if self.devMode {
+//        DevView()
+//          .onAppear { 
+//            print("Developer Mode-> True") 
+//          }
+//      } else { 
+//        ContentView()
+//          .onAppear { 
+//            print("Developer Mode-> False") 
+//          }
+//      }
       
     }
   }

@@ -177,3 +177,63 @@ extension MuscleGroup {
     }
   }
 }
+
+
+extension Muscles { 
+  var name: String { 
+    switch self {
+      case .pectoralisMajor:
+        return "piersiowy główny"
+      case .pectoralisMinor:
+        return "piersiowy mniejszy"
+      case .latissimusDorsi:
+        return "najszersze grzbietu"
+      case .trapezius:
+        return "trapez"
+      case .rhomboids:
+        return "romby"
+      case .infraspinatus:
+        return "podgrzebieniowy"
+      case .quadriceps:
+        return "mięsień czworogłowy"
+      case .hamstrings:
+        return "ścięgna podkolanowe"
+      case .glutes:
+        return "pośladki"
+      case .adductors:
+        return "przywodziciele"
+      case .abductors:
+        return "porywacze"
+      case .deltoids:
+        return "mięśnie naramienne"
+      case .triceps:
+        return "triceps"
+      case .biceps:
+        return "biceps"
+      case .forearms:
+        return "przedramiona"
+      case .wristFlexors:
+        return "Zginacze nadgarstka"
+      case .rectusAbdominis:
+        return "mięsień prosty brzucha"
+      case .obliques:
+        return "skośne"
+      case .transverseAbdominis:
+        return "poprzeczny Brzucha"
+      case .neckMuscles:
+        return "szyjaMięśnie"
+      case .shoulderPerimeterMuscles:
+        return "ramię Obwód Mięśnie"
+      case .intercostalMuscles:
+        return "mięśnie międzyżebrowe"
+      case .diaphragm:
+        return "membrana"
+      case .pelvicFloorMuscles:
+        return "Mięśnie dna miednicy"
+      case .hipMuscles:
+        return "biodra Mięśnie"
+      case .gastrocnemius:
+        return "brzuchaty łydki"
+    }
+  }
+}

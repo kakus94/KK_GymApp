@@ -46,7 +46,13 @@ class Exercise: Object, Identifiable {
 class ExercisePlan: Object { 
   @Persisted(primaryKey: true) var _id: ObjectId
   @Persisted var exerciseID: Exercise?
-  @Persisted var series: String // [{ id: value, repeat: 3, weight: 35.5 }]
+  // [{ id: value, repeat: 3, weight: 35.5 }]
+  @Persisted var series: String
+  
+  var getExerciseLp: [ExerciseLp] { 
+    ExerciseLp.createArrayModel(jsonString: series)
+  }  
+  
 }
 
 

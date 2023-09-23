@@ -28,8 +28,8 @@ struct KK_GymAppApp: SwiftUI.App {
   
   var body: some Scene {
     WindowGroup {
-      DevView()
-      
+      //DevView()
+      TreningProgressView()
       
 //      if self.devMode {
 //        DevView()

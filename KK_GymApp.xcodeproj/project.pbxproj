@@ -25,6 +25,13 @@
 		19E775D02ABF691A00753710 /* EquipmentModel .swift in Sources */ = {isa = PBXBuildFile; fileRef = 19E775CF2ABF691A00753710 /* EquipmentModel .swift */; };
 		19E775D22ABF6CD100753710 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 19E775D12ABF6CD100753710 /* Localizable.xcstrings */; };
 		19E775D42ABF6F6000753710 /* RealmModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19E775D32ABF6F6000753710 /* RealmModel.swift */; };
+		19E775D62ABF71B600753710 /* TreningProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19E775D52ABF71B600753710 /* TreningProgressView.swift */; };
+		19E775D82ABF756400753710 /* standing-barbell-biceps-curl.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 19E775D72ABF756400753710 /* standing-barbell-biceps-curl.mp4 */; };
+		19E775DB2ABF75FD00753710 /* FLAnimatedImage in Frameworks */ = {isa = PBXBuildFile; productRef = 19E775DA2ABF75FD00753710 /* FLAnimatedImage */; };
+		19E775DF2ABF7FFD00753710 /* video.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 19E775DE2ABF7D1D00753710 /* video.mp4 */; };
+		19E775E12ABF877600753710 /* PickerTrening.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19E775E02ABF877600753710 /* PickerTrening.swift */; };
+		19E775E32ABF87BC00753710 /* ArrayCreate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19E775E22ABF87BC00753710 /* ArrayCreate.swift */; };
+		19E775E52ABF933700753710 /* TreningProgressLpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19E775E42ABF933700753710 /* TreningProgressLpView.swift */; };
 		8E5A30A32AB3233E00E07869 /* Muscule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5A30A22AB3233E00E07869 /* Muscule.swift */; };
 		8E5A30A62AB3309100E07869 /* CreateTrening.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5A30A52AB3309100E07869 /* CreateTrening.swift */; };
 		8E5A30A82AB330A800E07869 /* TreningList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5A30A72AB330A800E07869 /* TreningList.swift */; };
@@ -77,6 +84,12 @@
 		19E775CF2ABF691A00753710 /* EquipmentModel .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EquipmentModel .swift"; sourceTree = "<group>"; };
 		19E775D12ABF6CD100753710 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		19E775D32ABF6F6000753710 /* RealmModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmModel.swift; sourceTree = "<group>"; };
+		19E775D52ABF71B600753710 /* TreningProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreningProgressView.swift; sourceTree = "<group>"; };
+		19E775D72ABF756400753710 /* standing-barbell-biceps-curl.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "standing-barbell-biceps-curl.mp4"; sourceTree = "<group>"; };
+		19E775DE2ABF7D1D00753710 /* video.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = video.mp4; sourceTree = "<group>"; };
+		19E775E02ABF877600753710 /* PickerTrening.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerTrening.swift; sourceTree = "<group>"; };
+		19E775E22ABF87BC00753710 /* ArrayCreate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayCreate.swift; sourceTree = "<group>"; };
+		19E775E42ABF933700753710 /* TreningProgressLpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreningProgressLpView.swift; sourceTree = "<group>"; };
 		8E5A30A22AB3233E00E07869 /* Muscule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Muscule.swift; sourceTree = "<group>"; };
 		8E5A30A52AB3309100E07869 /* CreateTrening.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTrening.swift; sourceTree = "<group>"; };
 		8E5A30A72AB330A800E07869 /* TreningList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreningList.swift; sourceTree = "<group>"; };
@@ -97,6 +110,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				19E775DB2ABF75FD00753710 /* FLAnimatedImage in Frameworks */,
 				19E1E54B2AAA14B200D942B7 /* Realm in Frameworks */,
 				19E1E5452AA916EE00D942B7 /* RealmSwift in Frameworks */,
 			);
@@ -132,6 +146,7 @@
 			isa = PBXGroup;
 			children = (
 				19E775D12ABF6CD100753710 /* Localizable.xcstrings */,
+				19E775DE2ABF7D1D00753710 /* video.mp4 */,
 				1986B4AA2AA626AD0094843D /* KK_GymApp */,
 				1986B4DB2AA62B2E0094843D /* Framework */,
 				1986B4BB2AA626AE0094843D /* KK_GymAppTests */,
@@ -201,6 +216,7 @@
 				19E1E51D2AA62CAA00D942B7 /* AppTextField.swift */,
 				8E67DE5A2AB434D30066A8E5 /* TreningTile.swift */,
 				191C85E32AB4E777003AC328 /* HistoryView */,
+				19E775E02ABF877600753710 /* PickerTrening.swift */,
 			);
 			path = Component;
 			sourceTree = "<group>";
@@ -211,6 +227,7 @@
 				1986B4D92AA627DE0094843D /* ViewHelper.swift */,
 				8EA492BB2AB44EA20092884F /* ExColor.swift */,
 				8EA492C02AB468E40092884F /* ExView.swift */,
+				19E775E22ABF87BC00753710 /* ArrayCreate.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -234,6 +251,7 @@
 		19E1E5222AA631DD00D942B7 /* Config */ = {
 			isa = PBXGroup;
 			children = (
+				19E775D72ABF756400753710 /* standing-barbell-biceps-curl.mp4 */,
 				19E1E5252AA6321300D942B7 /* config.swift */,
 			);
 			path = Config;
@@ -242,7 +260,6 @@
 		19E1E5462AA9171000D942B7 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				8E5A30A92AB3316F00E07869 /* MockRealms.swift */,
 				19E775D32ABF6F6000753710 /* RealmModel.swift */,
 				19E1E5472AA9172A00D942B7 /* Exercise.swift */,
 				19E775CF2ABF691A00753710 /* EquipmentModel .swift */,
@@ -265,6 +282,8 @@
 			children = (
 				8E5A30A52AB3309100E07869 /* CreateTrening.swift */,
 				8E5A30A72AB330A800E07869 /* TreningList.swift */,
+				19E775D52ABF71B600753710 /* TreningProgressView.swift */,
+				19E775E42ABF933700753710 /* TreningProgressLpView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -298,6 +317,7 @@
 			packageProductDependencies = (
 				19E1E5442AA916EE00D942B7 /* RealmSwift */,
 				19E1E54A2AAA14B200D942B7 /* Realm */,
+				19E775DA2ABF75FD00753710 /* FLAnimatedImage */,
 			);
 			productName = KK_GymApp;
 			productReference = 1986B4A82AA626AD0094843D /* KK_GymApp.app */;
@@ -373,6 +393,7 @@
 			mainGroup = 1986B49F2AA626AD0094843D;
 			packageReferences = (
 				19E1E5432AA916EE00D942B7 /* XCRemoteSwiftPackageReference "realm-swift" */,
+				19E775D92ABF75FD00753710 /* XCRemoteSwiftPackageReference "FLAnimatedImage" */,
 			);
 			productRefGroup = 1986B4A92AA626AD0094843D /* Products */;
 			projectDirPath = "";
@@ -390,6 +411,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				19E775D82ABF756400753710 /* standing-barbell-biceps-curl.mp4 in Resources */,
+				19E775DF2ABF7FFD00753710 /* video.mp4 in Resources */,
 				1986B4B32AA626AE0094843D /* Preview Assets.xcassets in Resources */,
 				1986B4B02AA626AE0094843D /* Assets.xcassets in Resources */,
 				19E775D22ABF6CD100753710 /* Localizable.xcstrings in Resources */,
@@ -428,14 +451,18 @@
 				8EB3DBCD2AB9B9E800A82BC9 /* ExerciseModelApp.swift in Sources */,
 				1986B4DA2AA627DE0094843D /* ViewHelper.swift in Sources */,
 				8E86BDCE2AB085A3009C5DD0 /* AddExercise.swift in Sources */,
+				19E775E52ABF933700753710 /* TreningProgressLpView.swift in Sources */,
 				19E1E5262AA6321300D942B7 /* config.swift in Sources */,
 				8E86BDCC2AB082D0009C5DD0 /* DevView.swift in Sources */,
 				1986B4AC2AA626AD0094843D /* KK_GymAppApp.swift in Sources */,
 				8EA492C32AB473E30092884F /* HistoryTreningDetailView.swift in Sources */,
 				19E775D02ABF691A00753710 /* EquipmentModel .swift in Sources */,
 				8E7F2B492AB2F1D200013ACD /* SecretFile.swift in Sources */,
+				19E775E32ABF87BC00753710 /* ArrayCreate.swift in Sources */,
 				8E5A30AA2AB3316F00E07869 /* MockRealms.swift in Sources */,
+				19E775E12ABF877600753710 /* PickerTrening.swift in Sources */,
 				8EA492C12AB468E40092884F /* ExView.swift in Sources */,
+				19E775D62ABF71B600753710 /* TreningProgressView.swift in Sources */,
 				8EA492BF2AB468820092884F /* HistoryTreningTile.swift in Sources */,
 				8E5A30A62AB3309100E07869 /* CreateTrening.swift in Sources */,
 				8E5A30A32AB3233E00E07869 /* Muscule.swift in Sources */,
@@ -783,6 +810,14 @@
 				kind = branch;
 			};
 		};
+		19E775D92ABF75FD00753710 /* XCRemoteSwiftPackageReference "FLAnimatedImage" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Flipboard/FLAnimatedImage.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.17;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -795,6 +830,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 19E1E5432AA916EE00D942B7 /* XCRemoteSwiftPackageReference "realm-swift" */;
 			productName = Realm;
+		};
+		19E775DA2ABF75FD00753710 /* FLAnimatedImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 19E775D92ABF75FD00753710 /* XCRemoteSwiftPackageReference "FLAnimatedImage" */;
+			productName = FLAnimatedImage;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

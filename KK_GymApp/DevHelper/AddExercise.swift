@@ -74,7 +74,7 @@ struct AddExercise_Previews: PreviewProvider {
 
 struct MuscleGroupSelector: View {
   
-  @State var muscleGroup: MuscleGroup = .arms
+  @State var muscleGroup: MuscleGroup = .adductors
   @State var result: [Bool] = .init(repeating: false, count: MuscleGroup.allCases.count)
   var handler: (String) -> Void
 //  let columns = [GridItem(.flexible()), GridItem(.flexible())]
@@ -98,7 +98,7 @@ struct MuscleGroupSelector: View {
 
 struct MuscleSelector: View {
   
-  @State var muscleGroup: Muscles = .hipMuscles
+  @State var muscleGroup: Muscles = .forearmExtensorMuscles
   @State var result: [Bool] = .init(repeating: false, count: Muscles.allCases.count)
   var handler: (String) -> Void
 //  let columns = [GridItem(.flexible()), GridItem(.flexible())]

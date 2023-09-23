@@ -14,13 +14,37 @@ struct AddExercise: View {
   
     var body: some View {
       Form { 
-        Section("Szczegóły") { 
-          AppTextField(name: "Name", placeholder: "", text: $exercise.name)
-          AppTextField(name: "Category", placeholder: "", text: $exercise.category)
-          AppTextField(name: "Description", placeholder: "", text: $exercise.desc)
+        Section("Nazwa") { 
+          TextField("Nazwa", text: $exercise.name)
         }
         
+        Section("Opis") { 
+          TextField("Opis", text: $exercise.desc)
+        }
+        
+        
+        Section("Kategorie") { 
+          TextField("Kategorie", text: $exercise.category)
+        }
+        
+        Section("muscleGroups") { 
+          MuscleGroupSelector { value in
+            print(value)
+          }
+        }
+        
+        Section("mainMuscule") { 
+          MuscleSelector { value in 
+            print(value)
+          }
+        }
        
+        Section("secondMuscule") { 
+          MuscleSelector { value in 
+            print(value)
+          }
+        }
+        
         Section("Video") { 
           TextField("Url", text: .constant(""))
         }
@@ -45,3 +69,52 @@ struct AddExercise_Previews: PreviewProvider {
         AddExercise()
     }
 }
+
+
+
+struct MuscleGroupSelector: View {
+  
+  @State var muscleGroup: MuscleGroup = .arms
+  @State var result: [Bool] = .init(repeating: false, count: MuscleGroup.allCases.count)
+  var handler: (String) -> Void
+//  let columns = [GridItem(.flexible()), GridItem(.flexible())]
+  var body: some View {
+    ScrollView(.horizontal, showsIndicators: false, content: { 
+      HStack {
+        ForEach(MuscleGroup.allCases.indices, id: \.self) { i in
+          Toggle(isOn: $result[i]) { 
+            Text(MuscleGroup.allCases[i].name)
+          }
+          .toggleStyle(ButtonToggleStyle())
+          Divider()
+        }
+      }
+    })
+           
+  }
+}
+
+
+
+struct MuscleSelector: View {
+  
+  @State var muscleGroup: Muscles = .hipMuscles
+  @State var result: [Bool] = .init(repeating: false, count: Muscles.allCases.count)
+  var handler: (String) -> Void
+//  let columns = [GridItem(.flexible()), GridItem(.flexible())]
+  var body: some View {
+    ScrollView(.horizontal, showsIndicators: false, content: { 
+      VStack {
+        ForEach(Muscles.allCases.indices, id: \.self) { i in
+          Toggle(isOn: $result[i]) { 
+            Text(Muscles.allCases[i].name)
+          }
+          .toggleStyle(ButtonToggleStyle())
+          Divider()
+        }
+      }
+    })
+           
+  }
+}
+

@@ -21,7 +21,7 @@ struct AppTextField: View {
           .maxWidth(.leading)
           .padding(.leading)
         TextField("cos", text: $text)
-          .textFieldStyle(WhiteBorder())
+//          .textFieldStyle(WhiteBorder())
       }
       
         

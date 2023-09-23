@@ -19,6 +19,7 @@ struct KK_GymAppApp: SwiftUI.App {
     realmApp = RealmSwift.App(id: apiKey)
 //    realmApp = RealmSwift.App()
     
+    ExerciseLp.mockExercises.getAvr
     
   }
   

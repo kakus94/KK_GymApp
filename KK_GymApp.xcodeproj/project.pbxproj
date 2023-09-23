@@ -37,6 +37,7 @@
 		8EA492BF2AB468820092884F /* HistoryTreningTile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EA492BE2AB468820092884F /* HistoryTreningTile.swift */; };
 		8EA492C12AB468E40092884F /* ExView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EA492C02AB468E40092884F /* ExView.swift */; };
 		8EA492C32AB473E30092884F /* HistoryTreningDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EA492C22AB473E30092884F /* HistoryTreningDetailView.swift */; };
+		8EB3DBCD2AB9B9E800A82BC9 /* ExerciseModelApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EB3DBCC2AB9B9E800A82BC9 /* ExerciseModelApp.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -88,6 +89,7 @@
 		8EA492BE2AB468820092884F /* HistoryTreningTile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTreningTile.swift; sourceTree = "<group>"; };
 		8EA492C02AB468E40092884F /* ExView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExView.swift; sourceTree = "<group>"; };
 		8EA492C22AB473E30092884F /* HistoryTreningDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTreningDetailView.swift; sourceTree = "<group>"; };
+		8EB3DBCC2AB9B9E800A82BC9 /* ExerciseModelApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseModelApp.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -245,6 +247,8 @@
 				19E1E5472AA9172A00D942B7 /* Exercise.swift */,
 				19E775CF2ABF691A00753710 /* EquipmentModel .swift */,
 				8E5A30A22AB3233E00E07869 /* Muscule.swift */,
+				8E5A30A92AB3316F00E07869 /* MockRealms.swift */,
+				8EB3DBCC2AB9B9E800A82BC9 /* ExerciseModelApp.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -421,6 +425,7 @@
 				1986B4D72AA627140094843D /* AppButton.swift in Sources */,
 				8EA492BC2AB44EA20092884F /* ExColor.swift in Sources */,
 				1986B4AE2AA626AD0094843D /* ContentView.swift in Sources */,
+				8EB3DBCD2AB9B9E800A82BC9 /* ExerciseModelApp.swift in Sources */,
 				1986B4DA2AA627DE0094843D /* ViewHelper.swift in Sources */,
 				8E86BDCE2AB085A3009C5DD0 /* AddExercise.swift in Sources */,
 				19E1E5262AA6321300D942B7 /* config.swift in Sources */,

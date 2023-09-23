@@ -6,3 +6,16 @@
 //
 
 import SwiftUI
+
+
+extension View {
+  
+  var historyTabStyle: some View {
+    self
+      .appPadding()
+      .background(Color.primaryContainer_)
+      .foregroundColor(Color.onPrimaryContainer_)
+      .cornerRadius(10)
+  }
+  
+}

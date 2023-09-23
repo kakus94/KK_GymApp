@@ -1,0 +1,344 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "%@" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@"
+          }
+        }
+      }
+    },
+    "%@ Cal" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ Cal"
+          }
+        }
+      }
+    },
+    "%lld" : {
+
+    },
+    "1" : {
+
+    },
+    "1:21" : {
+
+    },
+    "10.2.2023 " : {
+
+    },
+    "12" : {
+
+    },
+    "16" : {
+
+    },
+    "21 repts" : {
+
+    },
+    "145" : {
+
+    },
+    "456 Cal" : {
+
+    },
+    "1456" : {
+
+    },
+    "abCrunchMachine" : {
+      "comment" : "machine equipment"
+    },
+    "abWheel" : {
+      "comment" : "machine equipment"
+    },
+    "Add Exercise" : {
+
+    },
+    "assistedWeightMachine" : {
+      "comment" : "machine equipment"
+    },
+    "backExtensionBanch" : {
+      "comment" : "machine equipment"
+    },
+    "backExtensionMachine" : {
+      "comment" : "machine equipment"
+    },
+    "barbells" : {
+      "comment" : "machine equipment"
+    },
+    "battleRopes" : {
+      "comment" : "machine equipment"
+    },
+    "bicepCurlMachine" : {
+      "comment" : "machine equipment"
+    },
+    "bosu" : {
+      "comment" : "machine equipment"
+    },
+    "box" : {
+      "comment" : "machine equipment"
+    },
+    "brenchPressMachine" : {
+      "comment" : "machine equipment"
+    },
+    "calfRaiseMachine" : {
+      "comment" : "machine equipment"
+    },
+    "cone" : {
+      "comment" : "machine equipment"
+    },
+    "cos" : {
+
+    },
+    "crossoverCable" : {
+      "comment" : "machine equipment"
+    },
+    "das" : {
+
+    },
+    "declineBench" : {
+      "comment" : "machine equipment"
+    },
+    "Developer mode" : {
+
+    },
+    "dif" : {
+
+    },
+    "dipBar" : {
+      "comment" : "machine equipment"
+    },
+    "dumbbells" : {
+      "comment" : "machine equipment"
+    },
+    "Ekran historii" : {
+
+    },
+    "Ekran treningow" : {
+
+    },
+    "ezBar" : {
+      "comment" : "machine equipment"
+    },
+    "farmersWolkHandles" : {
+      "comment" : "machine equipment"
+    },
+    "flatBench" : {
+      "comment" : "machine equipment"
+    },
+    "flyMachine" : {
+      "comment" : "machine equipment"
+    },
+    "foamRoller" : {
+      "comment" : "machine equipment"
+    },
+    "freemontionMachine" : {
+      "comment" : "machine equipment"
+    },
+    "gluteHamRaiseBench" : {
+      "comment" : "machine equipment"
+    },
+    "gluteKickBackMachine" : {
+      "comment" : "machine equipment"
+    },
+    "hackSquatMachine" : {
+      "comment" : "machine equipment"
+    },
+    "hammersStrenghtMachine" : {
+      "comment" : "machine equipment"
+    },
+    "handleBands" : {
+      "comment" : "machine equipment"
+    },
+    "Hard" : {
+
+    },
+    "Hello, World!" : {
+
+    },
+    "hi_loPulleyCable" : {
+      "comment" : "machine equipment"
+    },
+    "inclineBench" : {
+      "comment" : "machine equipment"
+    },
+    "kettlebells" : {
+      "comment" : "machine equipment"
+    },
+    "kg" : {
+
+    },
+    "landMine" : {
+      "comment" : "machine equipment"
+    },
+    "latPullDownCable" : {
+      "comment" : "machine equipment"
+    },
+    "legCurlMachine" : {
+      "comment" : "machine equipment"
+    },
+    "legExtensionMachine" : {
+      "comment" : "machine equipment"
+    },
+    "legPress" : {
+      "comment" : "machine equipment"
+    },
+    "legPressMachine" : {
+      "comment" : "machine equipment"
+    },
+    "Login" : {
+
+    },
+    "loopBands" : {
+      "comment" : "machine equipment"
+    },
+    "Lp." : {
+
+    },
+    "miniLoopBands" : {
+      "comment" : "machine equipment"
+    },
+    "must Login" : {
+
+    },
+    "Name" : {
+
+    },
+    "Name trening" : {
+
+    },
+    "Opis" : {
+
+    },
+    "paralletteBar" : {
+      "comment" : "machine equipment"
+    },
+    "platforms" : {
+      "comment" : "machine equipment"
+    },
+    "preacherCurlBench" : {
+      "comment" : "machine equipment"
+    },
+    "preacherCurlMachine" : {
+      "comment" : "machine equipment"
+    },
+    "pullUpBar" : {
+      "comment" : "machine equipment"
+    },
+    "pvcPipe" : {
+      "comment" : "machine equipment"
+    },
+    "Register" : {
+
+    },
+    "rep" : {
+
+    },
+    "reverseHyperBench" : {
+      "comment" : "machine equipment"
+    },
+    "rings" : {
+      "comment" : "machine equipment"
+    },
+    "rope" : {
+      "comment" : "machine equipment"
+    },
+    "ropeCable" : {
+      "comment" : "machine equipment"
+    },
+    "rowCable" : {
+      "comment" : "machine equipment"
+    },
+    "rowMachine" : {
+      "comment" : "machine equipment"
+    },
+    "Sa" : {
+
+    },
+    "Send" : {
+
+    },
+    "shoulderPressMachine" : {
+      "comment" : "machine equipment"
+    },
+    "shoulderShtugMachine" : {
+      "comment" : "machine equipment"
+    },
+    "sled" : {
+      "comment" : "machine equipment"
+    },
+    "smithMachine" : {
+      "comment" : "machine equipment"
+    },
+    "squatMachine" : {
+      "comment" : "machine equipment"
+    },
+    "squatRack" : {
+      "comment" : "machine equipment"
+    },
+    "stabilityBall" : {
+      "comment" : "machine equipment"
+    },
+    "Super seria" : {
+
+    },
+    "Szczegóły" : {
+
+    },
+    "tBar" : {
+      "comment" : "machine equipment"
+    },
+    "thighAbductorMachine" : {
+      "comment" : "machine equipment"
+    },
+    "thinghAdductorMachine" : {
+      "comment" : "machine equipment"
+    },
+    "time" : {
+
+    },
+    "tire" : {
+      "comment" : "machine equipment"
+    },
+    "trapBar" : {
+      "comment" : "machine equipment"
+    },
+    "tricepsDipMachine" : {
+      "comment" : "machine equipment"
+    },
+    "tricepsExtensionMachine" : {
+      "comment" : "machine equipment"
+    },
+    "trx" : {
+      "comment" : "machine equipment"
+    },
+    "Url" : {
+
+    },
+    "verticalBench" : {
+      "comment" : "machine equipment"
+    },
+    "Video" : {
+
+    },
+    "With Apple" : {
+
+    },
+    "With Facebook" : {
+
+    },
+    "With Google" : {
+
+    },
+    "yoke" : {
+      "comment" : "machine equipment"
+    }
+  },
+  "version" : "1.0"
+}

@@ -22,6 +22,9 @@
 		19E1E5452AA916EE00D942B7 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 19E1E5442AA916EE00D942B7 /* RealmSwift */; };
 		19E1E5482AA9172A00D942B7 /* Exercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19E1E5472AA9172A00D942B7 /* Exercise.swift */; };
 		19E1E54B2AAA14B200D942B7 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 19E1E54A2AAA14B200D942B7 /* Realm */; };
+		19E775D02ABF691A00753710 /* EquipmentModel .swift in Sources */ = {isa = PBXBuildFile; fileRef = 19E775CF2ABF691A00753710 /* EquipmentModel .swift */; };
+		19E775D22ABF6CD100753710 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 19E775D12ABF6CD100753710 /* Localizable.xcstrings */; };
+		19E775D42ABF6F6000753710 /* RealmModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19E775D32ABF6F6000753710 /* RealmModel.swift */; };
 		8E5A30A32AB3233E00E07869 /* Muscule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5A30A22AB3233E00E07869 /* Muscule.swift */; };
 		8E5A30A62AB3309100E07869 /* CreateTrening.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5A30A52AB3309100E07869 /* CreateTrening.swift */; };
 		8E5A30A82AB330A800E07869 /* TreningList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5A30A72AB330A800E07869 /* TreningList.swift */; };
@@ -70,6 +73,9 @@
 		19E1E5202AA62EBD00D942B7 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		19E1E5252AA6321300D942B7 /* config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = config.swift; sourceTree = "<group>"; };
 		19E1E5472AA9172A00D942B7 /* Exercise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exercise.swift; sourceTree = "<group>"; };
+		19E775CF2ABF691A00753710 /* EquipmentModel .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EquipmentModel .swift"; sourceTree = "<group>"; };
+		19E775D12ABF6CD100753710 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
+		19E775D32ABF6F6000753710 /* RealmModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmModel.swift; sourceTree = "<group>"; };
 		8E5A30A22AB3233E00E07869 /* Muscule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Muscule.swift; sourceTree = "<group>"; };
 		8E5A30A52AB3309100E07869 /* CreateTrening.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTrening.swift; sourceTree = "<group>"; };
 		8E5A30A72AB330A800E07869 /* TreningList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreningList.swift; sourceTree = "<group>"; };
@@ -123,6 +129,7 @@
 		1986B49F2AA626AD0094843D = {
 			isa = PBXGroup;
 			children = (
+				19E775D12ABF6CD100753710 /* Localizable.xcstrings */,
 				1986B4AA2AA626AD0094843D /* KK_GymApp */,
 				1986B4DB2AA62B2E0094843D /* Framework */,
 				1986B4BB2AA626AE0094843D /* KK_GymAppTests */,
@@ -233,9 +240,11 @@
 		19E1E5462AA9171000D942B7 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				19E1E5472AA9172A00D942B7 /* Exercise.swift */,
-				8E5A30A22AB3233E00E07869 /* Muscule.swift */,
 				8E5A30A92AB3316F00E07869 /* MockRealms.swift */,
+				19E775D32ABF6F6000753710 /* RealmModel.swift */,
+				19E1E5472AA9172A00D942B7 /* Exercise.swift */,
+				19E775CF2ABF691A00753710 /* EquipmentModel .swift */,
+				8E5A30A22AB3233E00E07869 /* Muscule.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -379,6 +388,7 @@
 			files = (
 				1986B4B32AA626AE0094843D /* Preview Assets.xcassets in Resources */,
 				1986B4B02AA626AE0094843D /* Assets.xcassets in Resources */,
+				19E775D22ABF6CD100753710 /* Localizable.xcstrings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -406,6 +416,7 @@
 				19E1E5212AA62EBD00D942B7 /* LoginView.swift in Sources */,
 				8E67DE5B2AB434D30066A8E5 /* TreningTile.swift in Sources */,
 				8E5A30A82AB330A800E07869 /* TreningList.swift in Sources */,
+				19E775D42ABF6F6000753710 /* RealmModel.swift in Sources */,
 				19E1E5482AA9172A00D942B7 /* Exercise.swift in Sources */,
 				1986B4D72AA627140094843D /* AppButton.swift in Sources */,
 				8EA492BC2AB44EA20092884F /* ExColor.swift in Sources */,
@@ -416,6 +427,7 @@
 				8E86BDCC2AB082D0009C5DD0 /* DevView.swift in Sources */,
 				1986B4AC2AA626AD0094843D /* KK_GymAppApp.swift in Sources */,
 				8EA492C32AB473E30092884F /* HistoryTreningDetailView.swift in Sources */,
+				19E775D02ABF691A00753710 /* EquipmentModel .swift in Sources */,
 				8E7F2B492AB2F1D200013ACD /* SecretFile.swift in Sources */,
 				8E5A30AA2AB3316F00E07869 /* MockRealms.swift in Sources */,
 				8EA492C12AB468E40092884F /* ExView.swift in Sources */,

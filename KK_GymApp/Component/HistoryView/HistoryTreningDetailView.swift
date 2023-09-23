@@ -32,7 +32,11 @@ struct HistoryTreningDetailView: View {
           
           
           HistoryTreningOne(name: "Wyciskanie sztangi na lawce poziomej", timeComplite: "1:23", repeatEx: 21, valume: 2134)
+            .historyTabStyle
           
+          
+          HistoryTreningSuperSeries()
+            .historyTabStyle
           
         }
       }

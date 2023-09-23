@@ -66,7 +66,7 @@ struct HistoryTreningOne: View {
       
       Text(name)
         .font(.callout)
-        .maxWidth()
+        .maxWidth(.leading)
       
       HStack {
         
@@ -99,16 +99,32 @@ struct HistoryTreningOne: View {
       .font(.footnote)
       
     }
-    .appPadding()
-    .background(Color.primaryContainer_)
-    .foregroundColor(Color.onPrimaryContainer_)
-    .cornerRadius(10)
-    .appPadding(.large, edge: .top)
+
+//    .appPadding(.large, edge: .top)
     
   }
 }
 
 
+struct HistoryTreningSuperSeries: View {
+  
+  var body: some View {
+    VStack(spacing: 0) {
+      
+      Text("Super seria")
+        .font(.callout)
+        .maxWidth(.leading)
+      
+      HistoryTreningOne(name: "Wyciskanie sztangi na lawce poziomej", timeComplite: "1:23", repeatEx: 21, valume: 2134)
+      
+      HistoryTreningOne(name: "Wyciskanie sztangi na lawce poziomej", timeComplite: "1:23", repeatEx: 21, valume: 2134)
+      
+
+    }
+   
+
+  }
+}
 
 
 struct HistoryTreningTile_Previews: PreviewProvider {

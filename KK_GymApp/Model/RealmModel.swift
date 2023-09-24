@@ -56,6 +56,7 @@ class  TrainingPlan: Object, Identifiable {
   @Persisted var desc: String       // (Opis planu)
   @Persisted var duration: String   // (Czas trwania planu w dniach)
   @Persisted var exercises: List<ExercisePlan>  // (Tablica z identyfikatorami ćwiczeń w planie)
+  @Persisted var superSeries: String?
 }
 
 
@@ -78,7 +79,7 @@ class TrainingHistory: Object, Identifiable {
 struct appRealm {
   static var realmTreningShere: Realm {
     
-    let config = Realm.Configuration(fileURL: inLibFolder(fileName: "trening2.realm"), objectTypes: [Exercise.self, ExercisePlan.self, TrainingPlan.self])
+    let config = Realm.Configuration(fileURL: inLibFolder(fileName: "trening3.realm"), objectTypes: [Exercise.self, ExercisePlan.self, TrainingPlan.self])
     return try! Realm(configuration: config)
   }
   static var realmDataBaseShare: Realm {
@@ -96,5 +97,5 @@ struct appRealm {
 
 func inLibFolder(fileName: String) -> URL {
   URL(fileURLWithPath:
-        NSSearchPathForDirectoriesInDomains(.libraryDirectory, .userDomainMask, true).first!, isDirectory: true).appendingPathComponent(fileName)
+        NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first!, isDirectory: true).appendingPathComponent(fileName)
 }

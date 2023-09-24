@@ -12,26 +12,29 @@ import RealmSwift
 
 struct TreningProgressView: View {
   
-  @State var player: AVPlayer = AVPlayer()
-  @State var x: [Double] = .init(repeating: 2, count: 6)
-  @State var y:[Double] = .init(repeating: 2, count: 6)
-  @State var mode: [ModeLp] = .init(repeating: .pre, count: 6)
-  @State var current: Int = 0
+  @StateRealmObject var exercisePlan: ExercisePlan
   
-  @State var exercises: [ExerciseLp] = []
+  @State private var player: AVPlayer = AVPlayer()
+  @State private var x: [Double] = .init(repeating: 2, count: 6)
+  @State private var y:[Double] = .init(repeating: 2, count: 6)
+  @State private var mode: [ModeLp] = .init(repeating: .pre, count: 20)
+  @State private var current: Int = 0
   
-  let repsArray = arrayCreate(increment: 1, 0...100)
-  let kgArray = arrayCreate(increment: 0.5, 0...200)
+  @State private var exercises: [ExerciseLp] = []
   
-  @ObservedResults(ExercisePlan.self) var exercisePlan
+  private let repsArray = arrayCreate(increment: 1, 0...100)
+  private let kgArray = arrayCreate(increment: 0.5, 0...200)
+  
+//  @ObservedResults(ExercisePlan.self) var exercisePlan
+
   
   var body: some View {
     VStack {
       ScrollView {
         videoInstruction
         
-        Text("Name Exercise")
-          .font(.title)  
+        Text(exercisePlan.exerciseID!.name)
+          .font(.title)
         
         ForEach(exercises.indices, id: \.self) { i in
           let exercise = exercises[i]
@@ -55,7 +58,7 @@ struct TreningProgressView: View {
   
     }
     .onAppear {
-      exercises = ExerciseLp.createArrayModel(jsonString: exercisePlan.first!.series)
+      exercises = ExerciseLp.createArrayModel(jsonString: exercisePlan.series)
       
       let url = Bundle.main.url(forResource: "video", withExtension: "mp4")!
       player = AVPlayer(url: url)
@@ -84,6 +87,11 @@ struct TreningProgressView: View {
 }
 
 #Preview {
-  TreningProgressView()
-    .environment(\.realmConfiguration, MockRealms.mockTreningPlan().configuration)
+  VStack {
+    let realm = MockRealms.mockTreningPlan()
+    let exercisePlan = realm.objects(ExercisePlan.self)
+    
+    TreningProgressView(exercisePlan: exercisePlan[0])
+    //    .environment(\.realmConfiguration, MockRealms.mockTreningPlan().configuration)
+  }
 }

@@ -99,3 +99,45 @@ extension Array<ExerciseLp> {
   } 
   
 }
+
+
+
+//MARK: - SuperSeria
+struct SuperSeries: Codable, Identifiable {
+  var id = UUID().uuidString
+  var exercise: [[String]]
+  
+  static func createModel(jsonString: String) -> SuperSeries? {
+    let decoder = JSONDecoder()
+    guard let jsonData = jsonString.data(using: .utf8)
+    else { return nil }
+    do {
+      let result = try decoder.decode(SuperSeries.self, from: jsonData)
+      return result
+    } catch(let er) {
+      print(er)
+    }
+    return nil
+  }
+  
+}
+
+extension SuperSeries {
+  
+  var getJsonString: String? {
+    do {
+      let encoder = JSONEncoder()
+      let jsonData = try encoder.encode(self)
+      // Convert the JSON Data to a String
+      if let jsonString = String(data: jsonData, encoding: .utf8) {
+        print(jsonString)
+        return jsonString
+      }
+    } catch(let er) {
+      print(er)
+    }
+    
+    return nil
+  }
+  
+}

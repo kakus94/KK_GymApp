@@ -67,20 +67,20 @@ class MockRealms {
   static func mockTreningPlan() -> Realm {
     let realm = appRealm.realmTreningShere
     
-//    do {
-//      try realm.write {
-//        realm.deleteAll()
-//      }
-//    } catch {
-//      print(error.localizedDescription)
-//    }
+    do {
+      try realm.write {
+        realm.deleteAll()
+      }
+    } catch {
+      print(error.localizedDescription)
+    }
     
     let object = realm.objects(TrainingPlan.self)
     print("trening plan is empty ? -> \(object.isEmpty.description)")
     
     if object.isEmpty {
       print("Create new mock trening plan")
-      //MARK: - Exercise create
+      //MARK: - Exercise create 1
       let exercise = Exercise()
       exercise._id = .generate()
       exercise.name = "Wyciskanie sztangi na lawce plaskiej"
@@ -104,21 +104,82 @@ class MockRealms {
       exercise.mainMuscule.append(.middleChest)
       exercise.secondMuscule.append(.frontPartShoulder)
       
+      //MARK: - Exercise create 2
+      let exercise2 = Exercise()
+      exercise2._id = .generate()
+      exercise2.name = "Wyciskanie sztangi na lawce Dodatniej"
+      exercise2.category = .weight
+      exercise2.desc = """
+      Pozycja wyjściowa
+            
+            1) Połóż się na ławce płaskiej.
+      
+            2) Stopy ustaw w lekkim rozkroku i mocno zaprzyj o podłoże.
+      
+            3) Chwyć sztangę nachwytem (palce wskazują przód, kciuki skierowane do środka) na taką szerokość, aby w połowie wykonywania ruchu kąt między ramieniem a przedramieniem wynosił 90 stopni.
+      
+            4) Łopatki ściągnięte, barki opuszczone i mocno dociśnięte do ławeczki.
+            5) Zachowaj naturalne ustawienie kręgosłupa – odcinek lędźwiowy lekko uniesiony, pośladki na ławeczce.
+      """
+      exercise2.videoURL = Bundle.main.url(forResource: "video", withExtension: "mp4")!.relativeString
+      exercise2.precentUseBodyMass = 0.0
+      exercise2.muscleGroups = .chest
+      exercise2.mainMuscule.append(.upperChest)
+      exercise2.mainMuscule.append(.middleChest)
+      exercise2.secondMuscule.append(.frontPartShoulder)
+      
+      //MARK: - Exercise create 3
+      let exercise3 = Exercise()
+      exercise3._id = .generate()
+      exercise3.name = "Wyciskanie sztangi na lawce Ujemnej"
+      exercise3.category = .weight
+      exercise3.desc = """
+      Pozycja wyjściowa
+            
+            1) Połóż się na ławce płaskiej.
+      
+            2) Stopy ustaw w lekkim rozkroku i mocno zaprzyj o podłoże.
+      
+            3) Chwyć sztangę nachwytem (palce wskazują przód, kciuki skierowane do środka) na taką szerokość, aby w połowie wykonywania ruchu kąt między ramieniem a przedramieniem wynosił 90 stopni.
+      
+            4) Łopatki ściągnięte, barki opuszczone i mocno dociśnięte do ławeczki.
+            5) Zachowaj naturalne ustawienie kręgosłupa – odcinek lędźwiowy lekko uniesiony, pośladki na ławeczce.
+      """
+      exercise3.videoURL = Bundle.main.url(forResource: "video", withExtension: "mp4")!.relativeString
+      exercise3.precentUseBodyMass = 0.0
+      exercise3.muscleGroups = .chest
+      exercise3.mainMuscule.append(.upperChest)
+      exercise3.mainMuscule.append(.middleChest)
+      exercise3.secondMuscule.append(.frontPartShoulder)
+      
       //MARK: - trening exercise
       let ep1 = ExercisePlan()
       ep1._id = .generate()
       ep1.exerciseID = exercise
       ep1.series = ExerciseLp.stringJson
       
+      let ep2 = ExercisePlan()
+      ep2._id = .generate()
+      ep2.exerciseID = exercise
+      ep2.series = ExerciseLp.stringJson
+      
+      let ep3 = ExercisePlan()
+      ep3._id = .generate()
+      ep3.exerciseID = exercise
+      ep3.series = ExerciseLp.stringJson
+      
       //MARK: - create trening plan
       let treningPlan = TrainingPlan()
       treningPlan._id = .generate()
-      treningPlan.name = "nazwa treningu"
+      treningPlan.name = "Klata i Triceps"
       treningPlan.desc = """
       Trening Klatki i Tricepsa
 """
       treningPlan.duration = "1:23"
       treningPlan.exercises.append(ep1)
+      treningPlan.exercises.append(ep2)
+      treningPlan.exercises.append(ep3)
+      treningPlan.superSeries = SuperSeries.init(exercise: [[ep1._id.stringValue, ep2._id.stringValue]]).getJsonString
       
       do {
         try realm.write({

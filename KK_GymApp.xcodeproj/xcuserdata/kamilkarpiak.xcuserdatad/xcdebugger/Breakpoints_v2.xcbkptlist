@@ -7,17 +7,17 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "C4495FFD-8A5D-4C05-999D-73AEC8CF7A7B"
-            shouldBeEnabled = "No"
+            uuid = "BAA7826E-2438-48E0-B702-BD3AEDC42597"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "KK_GymApp/Model/MockRealms.swift"
+            filePath = "../../../../../../var/folders/nn/rgb9gpjn5cv1s2112dddbphr0000gn/T/swift-generated-sources/@__swiftmacro_9KK_GymApp33_90393F9D845979966BD73480BA551B83Ll7PreviewfMf_.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "82"
-            endingLineNumber = "82"
-            landmarkName = "mockTreningPlan()"
-            landmarkType = "7">
+            startingLineNumber = "1"
+            endingLineNumber = "1"
+            landmarkName = "$s9KK_GymApp33_90393F9D845979966BD73480BA551B83Ll7PreviewfMf_15PreviewRegistryfMu_"
+            landmarkType = "37">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

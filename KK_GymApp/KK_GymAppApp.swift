@@ -32,7 +32,7 @@ struct KK_GymAppApp: SwiftUI.App {
 //      TreningProgressView()
       
       
-      TreningList()
+      TreningExerciseSuperSeries()
         .environment(\.realm, MockRealms.mockTreningPlan())
       
       

@@ -45,8 +45,8 @@ struct ListExercise: View {
               .frame(width: 45, height: 45)
             VStack {
               Text(exercise.name)
-              Text(exercise.category)
-                .font(.footnote)
+//              Text(exercise.category)
+//                .font(.footnote)
             }
           }
         }

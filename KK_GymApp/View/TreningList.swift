@@ -6,15 +6,28 @@
 //
 
 import SwiftUI
+import RealmSwift
 
 struct TreningList: View {
+  
+  @ObservedResults(TrainingPlan.self) var trainingPlans
+  
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+      List {
+        ForEach(trainingPlans, id: \.self) { treningPlan in
+          Text(treningPlan.name)
+        }
+      }
+      
     }
 }
 
 struct TreningList_Previews: PreviewProvider {
     static var previews: some View {
+      VStack{
         TreningList()
+      }
+      .environment(\.realmConfiguration, MockRealms.mockTreningPlan().configuration)
+       
     }
 }

@@ -29,7 +29,7 @@ struct TreningProgressLpView: View {
             .foregroundColor(.green)
           
           Spacer()
-          Text(repsArray[Int(reps)].description)
+          Text(String(format: "%.0f", repsArray[Int(reps)]))
           Text("REPS")
           
           
@@ -58,7 +58,7 @@ struct TreningProgressLpView: View {
             PickerTrening(text: "REPS",
                           reps: repsArray,
                           index: $reps) { val in
-              Text(Int(val).description)
+              Text(String(format: "%.0f", repsArray[Int(reps)]))
             }
             
             PickerTrening(text: "KG",
@@ -80,7 +80,7 @@ struct TreningProgressLpView: View {
             .appPadding(.normal,edge: .leading)
           
           Spacer()
-          Text(repsArray[Int(reps)].description)
+          Text(String(format: "%.0f", repsArray[Int(reps)]))
           Text("REPS")
           
           
@@ -104,7 +104,7 @@ struct TreningProgressLpView: View {
             PickerTrening(text: "REPS",
                           reps: arrayCreate(increment: 1, 0...100),
                           index: $reps) { val in
-              Text(Int(val).description)
+              Text(String(format: "%.0f", repsArray[Int(reps)]))
             }
             
             PickerTrening(text: "KG",

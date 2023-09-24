@@ -17,7 +17,7 @@ class AplicationUser: Object, Identifiable {
 }
 
 
-class UserApp: Object {
+class UserApp: Object, Identifiable {
   @Persisted(primaryKey: true) var _id: ObjectId  // (Unikalny identyfikator użytkownika)
   @Persisted(originProperty: "userApp") var appUser: LinkingObjects<AplicationUser>
   @Persisted var name: String?   // (Imię i nazwisko użytkownika)
@@ -33,7 +33,7 @@ class UserApp: Object {
 class Exercise: Object, Identifiable {
   @Persisted(primaryKey: true) var _id: ObjectId
   @Persisted var name: String               // nazwa
-  @Persisted var category: String           // kategoria cwiczenia silowe, wlasnym cialem
+  @Persisted var category: TypeLoad           // kategoria cwiczenia silowe, wlasnym cialem
   @Persisted var desc: String               // opis
   @Persisted var videoURL: String?          // url do wideo
   @Persisted var precentUseBodyMass: Double // procentowy udzial wagi ciala
@@ -43,14 +43,14 @@ class Exercise: Object, Identifiable {
 }
 
 
-class ExercisePlan: Object {
+class ExercisePlan: Object, Identifiable {
   @Persisted(primaryKey: true) var _id: ObjectId
   @Persisted var exerciseID: Exercise?
   @Persisted var series: String // [{ id: value, repeat: 3, weight: 35.5 }]
 }
 
 
-class  TrainingPlan: Object {
+class  TrainingPlan: Object, Identifiable {
   @Persisted(primaryKey: true) var _id: ObjectId  // (Unikalny identyfikator planu)
   @Persisted var name: String       // (Nazwa planu)
   @Persisted var desc: String       // (Opis planu)
@@ -59,7 +59,7 @@ class  TrainingPlan: Object {
 }
 
 
-class TrainingHistory: Object {
+class TrainingHistory: Object, Identifiable {
   @Persisted(primaryKey: true) var _id: ObjectId  //(Unikalny identyfikator treningu)
   @Persisted var UserID:    UserApp?          //(ID użytkownika, który wykonał trening)
   @Persisted var PlanID:    ExercisePlan?     //(ID planu treningowego, który został wykonany)
@@ -67,4 +67,34 @@ class TrainingHistory: Object {
   @Persisted var Duration:  String            //(Czas trwania treningu)
   @Persisted var CaloriesBurned:      String  //(Spalone kalorie podczas treningu)
   @Persisted var ExercisesPerformed:  String  //(Tablica z informacjami o wykonanych ćwiczeniach w treningu, np. identyfikator ćwiczenia, liczba powtórzeń, obciążenie)
+}
+
+
+
+
+
+
+
+struct appRealm {
+  static var realmTreningShere: Realm {
+    
+    let config = Realm.Configuration(fileURL: inLibFolder(fileName: "trening2.realm"), objectTypes: [Exercise.self, ExercisePlan.self, TrainingPlan.self])
+    return try! Realm(configuration: config)
+  }
+  static var realmDataBaseShare: Realm {
+    let identifier = "database"
+    let config = Realm.Configuration(inMemoryIdentifier: identifier)
+    return try! Realm(configuration: config)
+  }
+}
+
+
+
+
+
+
+
+func inLibFolder(fileName: String) -> URL {
+  URL(fileURLWithPath:
+        NSSearchPathForDirectoriesInDomains(.libraryDirectory, .userDomainMask, true).first!, isDirectory: true).appendingPathComponent(fileName)
 }

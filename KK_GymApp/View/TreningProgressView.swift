@@ -7,16 +7,23 @@
 
 import SwiftUI
 import AVKit
+import RealmSwift
+
 
 struct TreningProgressView: View {
   
   @State var player: AVPlayer = AVPlayer()
+  @State var x: [Double] = .init(repeating: 2, count: 6)
+  @State var y:[Double] = .init(repeating: 2, count: 6)
+  @State var mode: [ModeLp] = .init(repeating: .pre, count: 6)
+  @State var current: Int = 0
   
-  @State var x: Double = 12
-  @State var y: Double = 12
+  @State var exercises: [ExerciseLp] = []
   
-  @State var mode: [ModeLp] = .init(repeating: .pre, count: 4)
-  @State var current: Int = -1
+  let repsArray = arrayCreate(increment: 1, 0...100)
+  let kgArray = arrayCreate(increment: 0.5, 0...200)
+  
+  @ObservedResults(ExercisePlan.self) var exercisePlan
   
   var body: some View {
     VStack {
@@ -24,55 +31,32 @@ struct TreningProgressView: View {
         videoInstruction
         
         Text("Name Exercise")
-          .font(.title)         
+          .font(.title)  
         
-        TreningProgressLpView(lp: 1,
-                              repsArray: arrayCreate(increment: 1, 0...100),
-                              kgArray: arrayCreate(increment: 1, 0...100),
-                              reps: $x,
-                              kg: $y,
-                              active: $mode[0])
-        
-        TreningProgressLpView(lp: 2,
-                              repsArray: arrayCreate(increment: 1, 0...100),
-                              kgArray: arrayCreate(increment: 1, 0...100),
-                              reps: $x,
-                              kg: $y,
-                              active: $mode[1])
-        
-        TreningProgressLpView(lp: 3,
-                              repsArray: arrayCreate(increment: 1, 0...100),
-                              kgArray: arrayCreate(increment: 1, 0...100),
-                              reps: $x,
-                              kg: $y,
-                              active: $mode[2])
-        
-        TreningProgressLpView(lp: 4,
-                              repsArray: arrayCreate(increment: 1, 0...100),
-                              kgArray: arrayCreate(increment: 1, 0...100),
-                              reps: $x,
-                              kg: $y,
-                              active: $mode[3])
-     
+        ForEach(exercises.indices, id: \.self) { i in
+          let exercise = exercises[i]
+          TreningProgressLpView(lp: exercise.lp,
+                                repsArray: repsArray,
+                                kgArray: kgArray,
+                                reps: Binding(get: { Double(exercises[i].repeatEx) }, set: { exercises[i].repeatEx = Int($0) }),
+                                kg: $y[i],
+                                active: $mode[i])
+          .onChange(of: x[i], perform: { value in
+            print(value)
+            exercises[i].repeatEx = Int(value)
+          })
+          .onChange(of: y[i], perform: { value in
+            print(value)
+            exercises[i].weight = value
+          })
+          Divider()
+        }
       }
-      
-      Button(action: {
-        if current >= 0 {
-          mode[current] = .done
-        }
-        current += 1
-        if current >= 0 {
-          mode[current] = .active
-        }
-        
-      }, label: {
-        Text("Next")
-      })
-      .buttonStyle(.borderedProminent)
-    
   
     }
     .onAppear {
+      exercises = ExerciseLp.createArrayModel(jsonString: exercisePlan.first!.series)
+      
       let url = Bundle.main.url(forResource: "video", withExtension: "mp4")!
       player = AVPlayer(url: url)
       player.play()
@@ -101,4 +85,5 @@ struct TreningProgressView: View {
 
 #Preview {
   TreningProgressView()
+    .environment(\.realmConfiguration, MockRealms.mockTreningPlan().configuration)
 }

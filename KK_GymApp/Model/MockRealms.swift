@@ -25,7 +25,7 @@ class MockRealms {
         let exercise = Exercise()
         exercise._id = ObjectId.generate()
         exercise.name = "Exercise \(i)"
-        exercise.category = "Category \(i % 3)" // Zakładamy 3 różne kategorie.
+        exercise.category = TypeLoad(rawValue: i%3)! // Zakładamy 3 różne kategorie.
         exercise.desc = "Description for Exercise \(i)"
         exercise.videoURL = "https://example.com/exercise\(i).mp4"
         
@@ -51,14 +51,90 @@ class MockRealms {
         }
         
         // Dodawanie do bazy danych Realm.
-        try! realm.write {
-            realm.add(exercise)
+      do {
+        try realm.write {
+          realm.add(exercise)
         }
+      } catch {
+        print(error)
+      }
     }
     
     return realm
   }
-} 
+  
+  
+  static func mockTreningPlan() -> Realm {
+    let realm = appRealm.realmTreningShere
+    
+//    do {
+//      try realm.write {
+//        realm.deleteAll()
+//      }
+//    } catch {
+//      print(error.localizedDescription)
+//    }
+    
+    let object = realm.objects(TrainingPlan.self)
+    print("trening plan is empty ? -> \(object.isEmpty.description)")
+    
+    if object.isEmpty {
+      print("Create new mock trening plan")
+      //MARK: - Exercise create
+      let exercise = Exercise()
+      exercise._id = .generate()
+      exercise.name = "Wyciskanie sztangi na lawce plaskiej"
+      exercise.category = .weight
+      exercise.desc = """
+      Pozycja wyjściowa
+            
+            1) Połóż się na ławce płaskiej.
+      
+            2) Stopy ustaw w lekkim rozkroku i mocno zaprzyj o podłoże.
+      
+            3) Chwyć sztangę nachwytem (palce wskazują przód, kciuki skierowane do środka) na taką szerokość, aby w połowie wykonywania ruchu kąt między ramieniem a przedramieniem wynosił 90 stopni.
+      
+            4) Łopatki ściągnięte, barki opuszczone i mocno dociśnięte do ławeczki.
+            5) Zachowaj naturalne ustawienie kręgosłupa – odcinek lędźwiowy lekko uniesiony, pośladki na ławeczce.
+      """
+      exercise.videoURL = Bundle.main.url(forResource: "video", withExtension: "mp4")!.relativeString
+      exercise.precentUseBodyMass = 0.0
+      exercise.muscleGroups = .chest
+      exercise.mainMuscule.append(.upperChest)
+      exercise.mainMuscule.append(.middleChest)
+      exercise.secondMuscule.append(.frontPartShoulder)
+      
+      //MARK: - trening exercise
+      let ep1 = ExercisePlan()
+      ep1._id = .generate()
+      ep1.exerciseID = exercise
+      ep1.series = ExerciseLp.stringJson
+      
+      //MARK: - create trening plan
+      let treningPlan = TrainingPlan()
+      treningPlan._id = .generate()
+      treningPlan.name = "nazwa treningu"
+      treningPlan.desc = """
+      Trening Klatki i Tricepsa
+"""
+      treningPlan.duration = "1:23"
+      treningPlan.exercises.append(ep1)
+      
+      do {
+        try realm.write({
+          realm.add(treningPlan)
+        })
+      } catch {
+        print(error.localizedDescription)
+      }
+      
+    }
+    
+    
+    return realm
+  }
+  
+}
 
 
 

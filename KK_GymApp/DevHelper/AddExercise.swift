@@ -24,7 +24,7 @@ struct AddExercise: View {
         
         
         Section("Kategorie") { 
-          TextField("Kategorie", text: $exercise.category)
+//          TextField("Kategorie", text: $exercise.category.)
         }
         
         Section("muscleGroups") { 

@@ -275,10 +275,9 @@ extension Muscles {
 
 
 enum TypeLoad: Int, PersistableEnum, CaseIterable {
-  case bodyWeight = 1
-  case machine = 2
-  case barbells = 3
-  case handle = 4
-  case resistanceBand = 5
+  case bodyWeight = 0
+  case weight = 1
+  case resilience = 2
+  case resistanceBand = 3
 }
 

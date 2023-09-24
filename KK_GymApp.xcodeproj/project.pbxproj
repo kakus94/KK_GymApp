@@ -32,6 +32,8 @@
 		19E775E12ABF877600753710 /* PickerTrening.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19E775E02ABF877600753710 /* PickerTrening.swift */; };
 		19E775E32ABF87BC00753710 /* ArrayCreate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19E775E22ABF87BC00753710 /* ArrayCreate.swift */; };
 		19E775E52ABF933700753710 /* TreningProgressLpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19E775E42ABF933700753710 /* TreningProgressLpView.swift */; };
+		19E775E72ABF9DF500753710 /* TrenigMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19E775E62ABF9DF500753710 /* TrenigMain.swift */; };
+		19E775E92ABF9F4E00753710 /* TreningExerciseSuperSeries.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19E775E82ABF9F4E00753710 /* TreningExerciseSuperSeries.swift */; };
 		8E5A30A32AB3233E00E07869 /* Muscule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5A30A22AB3233E00E07869 /* Muscule.swift */; };
 		8E5A30A62AB3309100E07869 /* CreateTrening.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5A30A52AB3309100E07869 /* CreateTrening.swift */; };
 		8E5A30A82AB330A800E07869 /* TreningList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5A30A72AB330A800E07869 /* TreningList.swift */; };
@@ -90,6 +92,8 @@
 		19E775E02ABF877600753710 /* PickerTrening.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerTrening.swift; sourceTree = "<group>"; };
 		19E775E22ABF87BC00753710 /* ArrayCreate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayCreate.swift; sourceTree = "<group>"; };
 		19E775E42ABF933700753710 /* TreningProgressLpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreningProgressLpView.swift; sourceTree = "<group>"; };
+		19E775E62ABF9DF500753710 /* TrenigMain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrenigMain.swift; sourceTree = "<group>"; };
+		19E775E82ABF9F4E00753710 /* TreningExerciseSuperSeries.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreningExerciseSuperSeries.swift; sourceTree = "<group>"; };
 		8E5A30A22AB3233E00E07869 /* Muscule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Muscule.swift; sourceTree = "<group>"; };
 		8E5A30A52AB3309100E07869 /* CreateTrening.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTrening.swift; sourceTree = "<group>"; };
 		8E5A30A72AB330A800E07869 /* TreningList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreningList.swift; sourceTree = "<group>"; };
@@ -283,6 +287,8 @@
 				8E5A30A52AB3309100E07869 /* CreateTrening.swift */,
 				8E5A30A72AB330A800E07869 /* TreningList.swift */,
 				19E775D52ABF71B600753710 /* TreningProgressView.swift */,
+				19E775E62ABF9DF500753710 /* TrenigMain.swift */,
+				19E775E82ABF9F4E00753710 /* TreningExerciseSuperSeries.swift */,
 				19E775E42ABF933700753710 /* TreningProgressLpView.swift */,
 			);
 			path = View;
@@ -446,6 +452,7 @@
 				19E775D42ABF6F6000753710 /* RealmModel.swift in Sources */,
 				19E1E5482AA9172A00D942B7 /* Exercise.swift in Sources */,
 				1986B4D72AA627140094843D /* AppButton.swift in Sources */,
+				19E775E92ABF9F4E00753710 /* TreningExerciseSuperSeries.swift in Sources */,
 				8EA492BC2AB44EA20092884F /* ExColor.swift in Sources */,
 				1986B4AE2AA626AD0094843D /* ContentView.swift in Sources */,
 				8EB3DBCD2AB9B9E800A82BC9 /* ExerciseModelApp.swift in Sources */,
@@ -453,6 +460,7 @@
 				8E86BDCE2AB085A3009C5DD0 /* AddExercise.swift in Sources */,
 				19E775E52ABF933700753710 /* TreningProgressLpView.swift in Sources */,
 				19E1E5262AA6321300D942B7 /* config.swift in Sources */,
+				19E775E72ABF9DF500753710 /* TrenigMain.swift in Sources */,
 				8E86BDCC2AB082D0009C5DD0 /* DevView.swift in Sources */,
 				1986B4AC2AA626AD0094843D /* KK_GymAppApp.swift in Sources */,
 				8EA492C32AB473E30092884F /* HistoryTreningDetailView.swift in Sources */,

@@ -16,10 +16,10 @@ struct KK_GymAppApp: SwiftUI.App {
   init() {
     self.devMode = CommandLine.arguments.contains("-devMode")
     
-    realmApp = RealmSwift.App(id: apiKey)
+//    realmApp = RealmSwift.App(id: apiKey)
 //    realmApp = RealmSwift.App()
     
-    ExerciseLp.mockExercises.getAvr
+//    ExerciseLp.mockExercises.getAvr
     
   }
   
@@ -29,7 +29,12 @@ struct KK_GymAppApp: SwiftUI.App {
   var body: some Scene {
     WindowGroup {
       //DevView()
-      TreningProgressView()
+//      TreningProgressView()
+      
+      
+      TreningList()
+        .environment(\.realm, MockRealms.mockTreningPlan())
+      
       
 //      if self.devMode {
 //        DevView()

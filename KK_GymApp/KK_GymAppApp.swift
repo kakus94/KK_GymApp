@@ -31,10 +31,10 @@ struct KK_GymAppApp: SwiftUI.App {
       //DevView()
 //      TreningProgressView()
       
-      
-      TreningExerciseSuperSeries()
-        .environment(\.realm, MockRealms.mockTreningPlan())
-      
+      NavigationStack {
+        TreningList()
+          .environment(\.realm, MockRealms.mockTreningPlan())
+      }
       
 //      if self.devMode {
 //        DevView()

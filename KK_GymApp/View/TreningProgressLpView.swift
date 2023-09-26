@@ -58,7 +58,7 @@ struct TreningProgressLpView: View {
             PickerTrening(text: "REPS",
                           reps: repsArray,
                           index: $reps) { val in
-              Text(String(format: "%.0f", repsArray[Int(reps)]))
+              Text(String(format: "%.0f", val))
             }
             
             PickerTrening(text: "KG",

@@ -159,14 +159,14 @@
     "Hard" : {
 
     },
-    "Hello, World!" : {
-
-    },
     "hi_loPulleyCable" : {
       "comment" : "machine equipment"
     },
     "inclineBench" : {
       "comment" : "machine equipment"
+    },
+    "Info about trening" : {
+
     },
     "Kategorie" : {
 
@@ -314,6 +314,9 @@
     },
     "stabilityBall" : {
       "comment" : "machine equipment"
+    },
+    "Start Trening" : {
+
     },
     "Super seria" : {
 

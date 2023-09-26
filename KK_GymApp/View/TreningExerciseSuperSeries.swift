@@ -15,18 +15,15 @@ struct TreningExerciseSuperSeries: View {
   
   @State private var tabIndex: Int = 0
   
-  @ObservedResults(TrainingPlan.self) var trainingPlans
-  
-  private var realm = MockRealms.mockTreningPlan()
-  @State private var exers: [ExercisePlan] = []
+  @ObservedObject var model: TreningExerciseController
   
     var body: some View {
       VStack {
         
         TabView(selection: $tabIndex,
                 content:  {
-          ForEach(exers.indices, id: \.self) { i in
-            TreningProgressView(exercisePlan: exers[i]).tag(i)
+          ForEach(model.exercisesPlans.exercise.indices, id: \.self) { i in
+            TreningProgressView(model: .init(exercisePlan: model.exercisesPlans.exercise[i])).tag(i)
           }
         })
         .tabViewStyle(.page(indexDisplayMode: .always))
@@ -42,32 +39,30 @@ struct TreningExerciseSuperSeries: View {
         })
         .buttonStyle(.borderedProminent)
       }
+      
+      
       .onAppear {
-        let trening = trainingPlans.first
-        if  let jsontstring = trening!.superSeries {
-          let superSeries = SuperSeries.createModel(jsonString: jsontstring )
-          
-          superSeries?.exercise.forEach({ values in
-            values.forEach { value in
-              let r = realm.objects(ExercisePlan.self).filter({ $0._id.stringValue == value }).elements.first
-              if let r {
-                exers.append(r)
-              }
 
-            }
-          })
-          print(exers)
-         
-          
-        }
         
-       
+        
         
       }
     }
 }
 
-#Preview {
-    TreningExerciseSuperSeries()
-    .environment(\.realmConfiguration, MockRealms.mockTreningPlan().configuration)
-}
+//struct TreninigProgresView_Previews: PreviewProvider {
+//  static var previews: some View {
+//    
+//    let realm = appRealm.realmTreningShere
+//    let object = realm.objects(TrainingPlan.self).first!
+//    let ex: [ExercisePlan] = object.exercises.map{ $0 }
+//    
+//    TreningExerciseSuperSeries(model: .init(exercisePlans: ex))
+//      .environmentObject(TrainingController.init(trainingPlan: object))
+//  }
+//}
+
+//#Preview {
+//    TreningExerciseSuperSeries()
+//    .environment(\.realmConfiguration, MockRealms.mockTreningPlan().configuration)
+//}

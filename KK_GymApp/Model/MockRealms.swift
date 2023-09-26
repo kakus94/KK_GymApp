@@ -66,7 +66,7 @@ class MockRealms {
   
   static func mockTreningPlan() -> Realm {
     let realm = appRealm.realmTreningShere
-    
+
     do {
       try realm.write {
         realm.deleteAll()
@@ -160,13 +160,23 @@ class MockRealms {
       
       let ep2 = ExercisePlan()
       ep2._id = .generate()
-      ep2.exerciseID = exercise
+      ep2.exerciseID = exercise2
       ep2.series = ExerciseLp.stringJson
       
       let ep3 = ExercisePlan()
       ep3._id = .generate()
-      ep3.exerciseID = exercise
+      ep3.exerciseID = exercise3
       ep3.series = ExerciseLp.stringJson
+      
+      //
+      let ss1 = SuperSeriesRl()
+      ss1._id = .generate()
+      ss1.exercise.append(ep1)
+      ss1.exercise.append(ep3)
+      
+      let ss2 = SuperSeriesRl()
+      ss2._id = .generate()
+      ss2.exercise.append(ep2)
       
       //MARK: - create trening plan
       let treningPlan = TrainingPlan()
@@ -176,10 +186,9 @@ class MockRealms {
       Trening Klatki i Tricepsa
 """
       treningPlan.duration = "1:23"
-      treningPlan.exercises.append(ep1)
-      treningPlan.exercises.append(ep2)
-      treningPlan.exercises.append(ep3)
-      treningPlan.superSeries = SuperSeries.init(exercise: [[ep1._id.stringValue, ep2._id.stringValue]]).getJsonString
+      treningPlan.exercises.append(ss1)
+      treningPlan.exercises.append(ss2)
+//      treningPlan.superSeries = SuperSeries.init(exercise: [[ep1._id.stringValue, ep2._id.stringValue]]).getJsonString
       
       do {
         try realm.write({

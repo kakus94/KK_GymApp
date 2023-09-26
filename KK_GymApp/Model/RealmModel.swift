@@ -49,14 +49,19 @@ class ExercisePlan: Object, Identifiable {
   @Persisted var series: String // [{ id: value, repeat: 3, weight: 35.5 }]
 }
 
+class SuperSeriesRl: Object, Identifiable {
+  @Persisted(primaryKey: true) var _id: ObjectId
+  @Persisted var exercise: List<ExercisePlan>
+}
+
 
 class  TrainingPlan: Object, Identifiable {
   @Persisted(primaryKey: true) var _id: ObjectId  // (Unikalny identyfikator planu)
   @Persisted var name: String       // (Nazwa planu)
   @Persisted var desc: String       // (Opis planu)
   @Persisted var duration: String   // (Czas trwania planu w dniach)
-  @Persisted var exercises: List<ExercisePlan>  // (Tablica z identyfikatorami ćwiczeń w planie)
-  @Persisted var superSeries: String?
+  @Persisted var exercises: List<SuperSeriesRl>  // (Tablica z identyfikatorami ćwiczeń w planie)
+//  @Persisted var superSeries: String?
 }
 
 
@@ -79,7 +84,7 @@ class TrainingHistory: Object, Identifiable {
 struct appRealm {
   static var realmTreningShere: Realm {
     
-    let config = Realm.Configuration(fileURL: inLibFolder(fileName: "trening3.realm"), objectTypes: [Exercise.self, ExercisePlan.self, TrainingPlan.self])
+    let config = Realm.Configuration(fileURL: inLibFolder(fileName: "xxx.realm"), objectTypes: [Exercise.self, ExercisePlan.self, TrainingPlan.self, SuperSeriesRl.self])
     return try! Realm(configuration: config)
   }
   static var realmDataBaseShare: Realm {

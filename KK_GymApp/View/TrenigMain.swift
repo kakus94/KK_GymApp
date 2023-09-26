@@ -6,14 +6,48 @@
 //
 
 import SwiftUI
+import RealmSwift
 
 struct TrenigMain: View {
   
+  @StateObject var model: TrainingController
+  
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+      VStack {
+        Text(model.trainingPlan.name)
+        Text("Info about trening")
+   
+        
+        ForEach(model.exercisesSeries.indices, id: \.self) { index in
+          NavigationLink {
+            TreningExerciseSuperSeries(model: model.exercisesSeries[index])
+            
+          } label: {
+            Text("Start Trening")
+          }
+        }
+        
+        Button {
+  
+        } label: {
+          Text("Start Trening")
+        }
+        .buttonStyle(.borderedProminent)
+      }
+      
     }
 }
 
 #Preview {
-    TrenigMain()
+  NavigationStack {
+    
+    let realm = MockRealms.mockTreningPlan()
+    if let object = realm.objects(TrainingPlan.self).first {
+      TrenigMain(model: TrainingController(trainingPlan: object))
+        .environment(\.realmConfiguration, realm.configuration)
+    } else {
+      Text("model is nil ")
+    }
+  }
+//  .environment(\.realm, appRealm.realmTreningShere)
 }

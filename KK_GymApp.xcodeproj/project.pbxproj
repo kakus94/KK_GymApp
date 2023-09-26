@@ -16,6 +16,7 @@
 		1986B4C92AA626AE0094843D /* KK_GymAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1986B4C82AA626AE0094843D /* KK_GymAppUITestsLaunchTests.swift */; };
 		1986B4D72AA627140094843D /* AppButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1986B4D62AA627140094843D /* AppButton.swift */; };
 		1986B4DA2AA627DE0094843D /* ViewHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1986B4D92AA627DE0094843D /* ViewHelper.swift */; };
+		19B467BC2AC0C91700770AA6 /* TreningController .swift in Sources */ = {isa = PBXBuildFile; fileRef = 19B467BB2AC0C91700770AA6 /* TreningController .swift */; };
 		19E1E51E2AA62CAA00D942B7 /* AppTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19E1E51D2AA62CAA00D942B7 /* AppTextField.swift */; };
 		19E1E5212AA62EBD00D942B7 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19E1E5202AA62EBD00D942B7 /* LoginView.swift */; };
 		19E1E5262AA6321300D942B7 /* config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19E1E5252AA6321300D942B7 /* config.swift */; };
@@ -79,6 +80,7 @@
 		1986B4C82AA626AE0094843D /* KK_GymAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KK_GymAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		1986B4D62AA627140094843D /* AppButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppButton.swift; sourceTree = "<group>"; };
 		1986B4D92AA627DE0094843D /* ViewHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewHelper.swift; sourceTree = "<group>"; };
+		19B467BB2AC0C91700770AA6 /* TreningController .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TreningController .swift"; sourceTree = "<group>"; };
 		19E1E51D2AA62CAA00D942B7 /* AppTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTextField.swift; sourceTree = "<group>"; };
 		19E1E5202AA62EBD00D942B7 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		19E1E5252AA6321300D942B7 /* config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = config.swift; sourceTree = "<group>"; };
@@ -173,6 +175,7 @@
 		1986B4AA2AA626AD0094843D /* KK_GymApp */ = {
 			isa = PBXGroup;
 			children = (
+				19B467BA2AC0C8F400770AA6 /* Controller */,
 				19E1E5462AA9171000D942B7 /* Model */,
 				8E5A30A42AB3306F00E07869 /* View */,
 				19E1E51F2AA62EAA00D942B7 /* Account */,
@@ -244,6 +247,14 @@
 			path = KK_GymApp;
 			sourceTree = "<group>";
 		};
+		19B467BA2AC0C8F400770AA6 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				19B467BB2AC0C91700770AA6 /* TreningController .swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		19E1E51F2AA62EAA00D942B7 /* Account */ = {
 			isa = PBXGroup;
 			children = (
@@ -286,8 +297,8 @@
 			children = (
 				8E5A30A52AB3309100E07869 /* CreateTrening.swift */,
 				8E5A30A72AB330A800E07869 /* TreningList.swift */,
-				19E775D52ABF71B600753710 /* TreningProgressView.swift */,
 				19E775E62ABF9DF500753710 /* TrenigMain.swift */,
+				19E775D52ABF71B600753710 /* TreningProgressView.swift */,
 				19E775E82ABF9F4E00753710 /* TreningExerciseSuperSeries.swift */,
 				19E775E42ABF933700753710 /* TreningProgressLpView.swift */,
 			);
@@ -452,6 +463,7 @@
 				19E775D42ABF6F6000753710 /* RealmModel.swift in Sources */,
 				19E1E5482AA9172A00D942B7 /* Exercise.swift in Sources */,
 				1986B4D72AA627140094843D /* AppButton.swift in Sources */,
+				19B467BC2AC0C91700770AA6 /* TreningController .swift in Sources */,
 				19E775E92ABF9F4E00753710 /* TreningExerciseSuperSeries.swift in Sources */,
 				8EA492BC2AB44EA20092884F /* ExColor.swift in Sources */,
 				1986B4AE2AA626AD0094843D /* ContentView.swift in Sources */,

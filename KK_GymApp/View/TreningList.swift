@@ -15,7 +15,12 @@ struct TreningList: View {
     var body: some View {
       List {
         ForEach(trainingPlans, id: \.self) { treningPlan in
-          Text(treningPlan.name)
+          NavigationLink {            
+            TrenigMain(model: .init(trainingPlan: treningPlan))
+          } label: {
+            Text(treningPlan.name)
+          }
+
         }
       }
       
@@ -24,7 +29,7 @@ struct TreningList: View {
 
 struct TreningList_Previews: PreviewProvider {
     static var previews: some View {
-      VStack{
+      NavigationStack {
         TreningList()
       }
       .environment(\.realmConfiguration, MockRealms.mockTreningPlan().configuration)

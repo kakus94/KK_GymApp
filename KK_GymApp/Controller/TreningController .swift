@@ -60,11 +60,14 @@ class ProgressTreningControler: ObservableObject {
   @Published var exercisePlan: ExercisePlan
   @Published var exercises: [ExerciseLp] = []
   
-  var mode: [ModeLp] = .init(repeating: .pre, count: 20)
+  @Published var mode: [ModeLp] = .init(repeating: .done, count: 20)
   
   init(exercisePlan: ExercisePlan) {
     self.exercisePlan = exercisePlan
     self.exercises = ExerciseLp.createArrayModel(jsonString: exercisePlan.series)
+    
   }
+  
+  
   
 }

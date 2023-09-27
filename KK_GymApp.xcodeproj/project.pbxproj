@@ -16,6 +16,7 @@
 		1986B4C92AA626AE0094843D /* KK_GymAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1986B4C82AA626AE0094843D /* KK_GymAppUITestsLaunchTests.swift */; };
 		1986B4D72AA627140094843D /* AppButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1986B4D62AA627140094843D /* AppButton.swift */; };
 		1986B4DA2AA627DE0094843D /* ViewHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1986B4D92AA627DE0094843D /* ViewHelper.swift */; };
+		199714602AC4305D002927BD /* ExerciseDetailInTrening.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1997145F2AC4305D002927BD /* ExerciseDetailInTrening.swift */; };
 		19B467BC2AC0C91700770AA6 /* TreningController .swift in Sources */ = {isa = PBXBuildFile; fileRef = 19B467BB2AC0C91700770AA6 /* TreningController .swift */; };
 		19E1E51E2AA62CAA00D942B7 /* AppTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19E1E51D2AA62CAA00D942B7 /* AppTextField.swift */; };
 		19E1E5212AA62EBD00D942B7 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19E1E5202AA62EBD00D942B7 /* LoginView.swift */; };
@@ -80,6 +81,7 @@
 		1986B4C82AA626AE0094843D /* KK_GymAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KK_GymAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		1986B4D62AA627140094843D /* AppButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppButton.swift; sourceTree = "<group>"; };
 		1986B4D92AA627DE0094843D /* ViewHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewHelper.swift; sourceTree = "<group>"; };
+		1997145F2AC4305D002927BD /* ExerciseDetailInTrening.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseDetailInTrening.swift; sourceTree = "<group>"; };
 		19B467BB2AC0C91700770AA6 /* TreningController .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TreningController .swift"; sourceTree = "<group>"; };
 		19E1E51D2AA62CAA00D942B7 /* AppTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTextField.swift; sourceTree = "<group>"; };
 		19E1E5202AA62EBD00D942B7 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
@@ -247,6 +249,35 @@
 			path = KK_GymApp;
 			sourceTree = "<group>";
 		};
+		1997145C2AC42E84002927BD /* Treninig */ = {
+			isa = PBXGroup;
+			children = (
+				1997145E2AC42EBF002927BD /* Model */,
+				1997145D2AC42EA3002927BD /* Helper */,
+				8E5A30A72AB330A800E07869 /* TreningList.swift */,
+				19E775E62ABF9DF500753710 /* TrenigMain.swift */,
+				19E775E82ABF9F4E00753710 /* TreningExerciseSuperSeries.swift */,
+				19E775D52ABF71B600753710 /* TreningProgressView.swift */,
+			);
+			path = Treninig;
+			sourceTree = "<group>";
+		};
+		1997145D2AC42EA3002927BD /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				19E775E42ABF933700753710 /* TreningProgressLpView.swift */,
+				1997145F2AC4305D002927BD /* ExerciseDetailInTrening.swift */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
+		1997145E2AC42EBF002927BD /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		19B467BA2AC0C8F400770AA6 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
@@ -295,12 +326,8 @@
 		8E5A30A42AB3306F00E07869 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				1997145C2AC42E84002927BD /* Treninig */,
 				8E5A30A52AB3309100E07869 /* CreateTrening.swift */,
-				8E5A30A72AB330A800E07869 /* TreningList.swift */,
-				19E775E62ABF9DF500753710 /* TrenigMain.swift */,
-				19E775D52ABF71B600753710 /* TreningProgressView.swift */,
-				19E775E82ABF9F4E00753710 /* TreningExerciseSuperSeries.swift */,
-				19E775E42ABF933700753710 /* TreningProgressLpView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -476,6 +503,7 @@
 				8E86BDCC2AB082D0009C5DD0 /* DevView.swift in Sources */,
 				1986B4AC2AA626AD0094843D /* KK_GymAppApp.swift in Sources */,
 				8EA492C32AB473E30092884F /* HistoryTreningDetailView.swift in Sources */,
+				199714602AC4305D002927BD /* ExerciseDetailInTrening.swift in Sources */,
 				19E775D02ABF691A00753710 /* EquipmentModel .swift in Sources */,
 				8E7F2B492AB2F1D200013ACD /* SecretFile.swift in Sources */,
 				19E775E32ABF87BC00753710 /* ArrayCreate.swift in Sources */,

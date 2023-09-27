@@ -13,26 +13,34 @@ struct TrenigMain: View {
   @StateObject var model: TrainingController
   
     var body: some View {
-      VStack {
-        Text(model.trainingPlan.name)
-        Text("Info about trening")
-   
-        
-        ForEach(model.exercisesSeries.indices, id: \.self) { index in
-          NavigationLink {
-            TreningExerciseSuperSeries(model: model.exercisesSeries[index])
+      Form {
+        Section {
+          ForEach(model.exercisesSeries.indices, id: \.self) { index in
             
-          } label: {
-            Text("Start Trening")
+            NavigationLink {
+              TreningExerciseSuperSeries(model: model.exercisesSeries[index])
+            } label: {
+              ExerciseDetailInTrening(lp: index + 1,
+                                      exercisesPlans: model.exercisesSeries[index].exercisesPlans)
+            }
           }
+        } header: {
+          VStack(alignment: .leading) {
+            Text(model.trainingPlan.name)
+              .font(.title)
+              
+            Text("Info about trening")
+          }
+          .maxWidth(.leading)
         }
+
         
         Button {
   
         } label: {
           Text("Start Trening")
         }
-        .buttonStyle(.borderedProminent)
+        
       }
       
     }

@@ -10,12 +10,10 @@ import RealmSwift
 
 struct TreningExerciseSuperSeries: View {
   
-  
-  @State var exerciseId: Int = -1
-  
-  @State private var tabIndex: Int = 0
-  
   @ObservedObject var model: TreningExerciseController
+  
+  @State private var exerciseId: Int = -1
+  @State private var tabIndex: Int = 0
   
     var body: some View {
       VStack {
@@ -39,30 +37,22 @@ struct TreningExerciseSuperSeries: View {
         })
         .buttonStyle(.borderedProminent)
       }
+            
+      .onAppear { }      
       
-      
-      .onAppear {
-
-        
-        
-        
-      }
     }
 }
 
-//struct TreninigProgresView_Previews: PreviewProvider {
-//  static var previews: some View {
-//    
-//    let realm = appRealm.realmTreningShere
-//    let object = realm.objects(TrainingPlan.self).first!
-//    let ex: [ExercisePlan] = object.exercises.map{ $0 }
-//    
-//    TreningExerciseSuperSeries(model: .init(exercisePlans: ex))
-//      .environmentObject(TrainingController.init(trainingPlan: object))
-//  }
-//}
+struct TreninigProgresView_Previews: PreviewProvider {
+  static var previews: some View {
+    
+    let realm = appRealm.realmTreningShere
+    let object = realm.objects(TrainingPlan.self).first!
+    let suprerSeries: SuperSeriesRl = object.exercises.first!
+    
+    TreningExerciseSuperSeries(model: .init(exercisesPlans: suprerSeries))
+      .environmentObject(TrainingController.init(trainingPlan: object))
+  }
+}
 
-//#Preview {
-//    TreningExerciseSuperSeries()
-//    .environment(\.realmConfiguration, MockRealms.mockTreningPlan().configuration)
-//}
+

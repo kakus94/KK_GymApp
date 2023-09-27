@@ -8,16 +8,20 @@
 import Foundation
 import AVKit
 import RealmSwift
-
+import SwiftUI
 
 class TrainingController: ObservableObject {
   
-  @Published var exercisePlan: [ExercisePlan] = []
-  
   @Published var exercisesSeries: [TreningExerciseController] = []
+  @Published var treningMode: TreningMode = .off
+  
+  //Mierzenie czasu treningu
+  var timer: Timer?
+  var startTime: Date?
+  var stopTime: Date?
+  @Published var timeString: String = ""
   
   var trainingPlan: TrainingPlan
-  
   let realm = appRealm.realmTreningShere
   
   init(trainingPlan: TrainingPlan) {
@@ -32,7 +36,8 @@ class TrainingController: ObservableObject {
     }
   }
   
-  func removeExercisePlanForAllex( array: inout [ExercisePlan], of: ExercisePlan) {
+  func removeExercisePlanForAllex( array: inout [ExercisePlan], 
+                                   of: ExercisePlan) {
     print("removeExercisePlanForAllex")
     if let indexToRemove = array.firstIndex(where: { $0._id == of._id}) {
       print("Find index \(indexToRemove) count: \(array.count)")
@@ -40,16 +45,160 @@ class TrainingController: ObservableObject {
       print("dalete new array count: \(array.count)")
     }
   }
+ 
+  func startStopButton() {
+    switch treningMode {
+    case .off:
+      startTrening()
+    case .on:
+      stopTrening()
+    case .done:
+      //Save
+      print("Save action")
+    }
+  }
+  
+  private func startTrening() {
+    print("startTrening")
+    startTime = .now
+    self.timeString = self.getTimerString()
+    timer = Timer.scheduledTimer(withTimeInterval: 1,
+                                 repeats: true,
+                                 block: { t in
+      self.timeString = self.getTimerString()
+    })
+    treningMode = .on
+  }
+  
+  private func stopTrening() {
+    timer?.invalidate()
+    treningMode = .done
+  }
+  
+  private func getTimerString() -> String {
+    guard let startTime else { return "__-__" }
+    let tempDate: Date = .now
+    let mili = Int(tempDate.timeIntervalSince1970 - startTime.timeIntervalSince1970)
+    return String(format: "%02d:%02d", mili / 60, mili % 60)
+  }
+  
+  enum TreningMode: Int {
+    case off, on, done
+    
+    var name: String {
+      switch self {
+      case .off:
+        return "Zacznij trening"
+      case .on:
+        return "Zakoncz trening"
+      case .done:
+        return "Zapisz"
+      }
+    }
+    
+    var color: Color {
+      switch self {
+      case .off:
+        return .blue
+      case .on:
+        return .red
+      case .done:
+        return .green
+      }
+    }
+    
+
+  }
   
 }
+
+protocol ProgressTreningControlerDelegate {
+  
+  func nextButton()
+  
+}
+
 
 class TreningExerciseController: ObservableObject {
   
   @Published var exercisesPlans: SuperSeriesRl
-  
+  @Published var progressTreningControlers: [ProgressTreningControler]
+  @Published var tabIndex: Int = 0
   
   init(exercisesPlans: SuperSeriesRl) {
     self.exercisesPlans = exercisesPlans
+    self.progressTreningControlers = exercisesPlans.exercise.map {
+      .init(exercisePlan: $0)
+    }
+  }
+  
+  @Published var actionTrening: ActionTrening = .start
+  var activeSeries: Int = 0
+  
+  func nextButton() {
+    let superActive = progressTreningControlers.count > 1
+    
+    switch actionTrening {
+    case .start:
+      progressTreningControlers[tabIndex].mode[activeSeries] = .active
+      actionTrening = .save
+    case .save:
+      progressTreningControlers[tabIndex].mode[activeSeries] = .done
+      if superActive {
+        actionTrening = .nextScreen
+      } else  {
+        actionTrening = .start
+        activeSeries += 1
+      }
+    case .nextScreen:
+     nextScreen()
+      actionTrening = .start
+    }
+  }
+  
+  
+  private func checkAndIncrementActiveSeries() {
+    if tabIndex == 0 {
+      activeSeries += 1
+      actionTrening = .start
+    }
+  }
+  
+  private func nextScreen() {
+    let newIndex = tabIndex + 1
+    if newIndex < exercisesPlans.exercise.count {
+      tabIndex = newIndex
+    } else {
+      tabIndex = 0
+      activeSeries += 1
+    }
+  }
+  
+  
+  enum ActionTrening: Int {
+    case start, save, nextScreen
+    
+    var nameButton: String {
+      switch self {
+      case .start:
+        return "Zacznij serie"
+      case .save:
+        return "Zakoncz serie"
+      case .nextScreen:
+        return "Nastepne Cwiczenie"
+      }
+    }
+    
+    var color: Color {
+      switch self {
+      case .start:
+        return .green
+      case .save:
+        return .red
+      case .nextScreen:
+        return .blue
+      }
+    }
   }
   
 }
@@ -60,13 +209,18 @@ class ProgressTreningControler: ObservableObject {
   @Published var exercisePlan: ExercisePlan
   @Published var exercises: [ExerciseLp] = []
   
-  @Published var mode: [ModeLp] = .init(repeating: .done, count: 20)
+  @Published var mode: [ModeLp] = .init(repeating: .pre, count: 20)
+  
+//  var delagate: ProgressTreningControlerDelegate?
   
   init(exercisePlan: ExercisePlan) {
     self.exercisePlan = exercisePlan
     self.exercises = ExerciseLp.createArrayModel(jsonString: exercisePlan.series)
     
   }
+  
+  
+  
   
   
   

@@ -21,6 +21,9 @@
         }
       }
     },
+    "%@." : {
+
+    },
     "%lld" : {
 
     },
@@ -98,6 +101,9 @@
     },
     "crossoverCable" : {
       "comment" : "machine equipment"
+    },
+    "Czas treningu" : {
+
     },
     "das" : {
 
@@ -225,10 +231,10 @@
     "Nazwa" : {
 
     },
-    "Next" : {
+    "Obj: %@ kg" : {
 
     },
-    "Obj: %@ kg" : {
+    "Objetosść" : {
 
     },
     "Opis" : {
@@ -242,6 +248,9 @@
     },
     "platforms" : {
       "comment" : "machine equipment"
+    },
+    "Powtórzenia" : {
+
     },
     "preacherCurlBench" : {
       "comment" : "machine equipment"
@@ -315,10 +324,10 @@
     "stabilityBall" : {
       "comment" : "machine equipment"
     },
-    "Start Trening" : {
+    "Super seria" : {
 
     },
-    "Super seria" : {
+    "Szczegoly treninigu" : {
 
     },
     "tBar" : {

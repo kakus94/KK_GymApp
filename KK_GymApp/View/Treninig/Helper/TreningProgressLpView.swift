@@ -47,7 +47,7 @@ struct TreningProgressLpView: View {
         VStack {
           HStack(spacing: 0) {
             
-            Image(systemName: "1.square.fill")
+            Image(systemName: "\(lp).square.fill")
               .resizable()
               .frame(width: 30, height: 30, alignment: .center)
               .appPadding(.normal,edge: .leading)
@@ -94,7 +94,7 @@ struct TreningProgressLpView: View {
         VStack {
           HStack(spacing: 0) {
             
-            Image(systemName: "01.square.fill")
+            Image(systemName: "\(lp).square.fill")
               .resizable()
               .frame(width: 30, height: 30, alignment: .center)
               .appPadding(.normal,edge: .leading)

@@ -14,12 +14,40 @@ struct TrenigMain: View {
   
     var body: some View {
       Form {
+        
+        if model.treningMode != .off {
+          Section{
+            HStack {
+              Text("Czas treningu")
+              Spacer()
+              Text(model.timeString)
+            }
+            HStack {
+              Text("Powtórzenia")
+              Spacer()
+              Text(21.description)
+            }
+            HStack {
+              Text("Objetosść")
+              Spacer()
+              Text(2332.description)
+            }
+          } header: {
+            Text("Szczegoly treninigu")
+          }
+        }
+        
         Section {
           ForEach(model.exercisesSeries.indices, id: \.self) { index in
             
-            NavigationLink {
-              TreningExerciseSuperSeries(model: model.exercisesSeries[index])
-            } label: {
+            if model.treningMode != .off {
+              NavigationLink {
+                TreningExerciseSuperSeries(model: model.exercisesSeries[index])
+              } label: {
+                ExerciseDetailInTrening(lp: index + 1,
+                                        exercisesPlans: model.exercisesSeries[index].exercisesPlans)
+              }
+            } else {
               ExerciseDetailInTrening(lp: index + 1,
                                       exercisesPlans: model.exercisesSeries[index].exercisesPlans)
             }
@@ -33,15 +61,17 @@ struct TrenigMain: View {
           }
           .maxWidth(.leading)
         }
-
+      
         
         Button {
-  
+          model.startStopButton()
         } label: {
-          Text("Start Trening")
+          Text(model.treningMode.name)
         }
+        .tint(model.treningMode.color)
         
       }
+    
       
     }
 }

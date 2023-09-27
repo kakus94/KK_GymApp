@@ -12,30 +12,32 @@ struct TreningExerciseSuperSeries: View {
   
   @ObservedObject var model: TreningExerciseController
   
-  @State private var exerciseId: Int = -1
-  @State private var tabIndex: Int = 0
+//  @State private var exerciseId: Int = -1
+//  @State private var tabIndex: Int = 0
   
     var body: some View {
       VStack {
         
-        TabView(selection: $tabIndex,
+        TabView(selection: $model.tabIndex,
                 content:  {
-          ForEach(model.exercisesPlans.exercise.indices, id: \.self) { i in
-            TreningProgressView(model: .init(exercisePlan: model.exercisesPlans.exercise[i])).tag(i)
+          ForEach(model.progressTreningControlers.indices, id: \.self) { i in
+            TreningProgressView(model: model.progressTreningControlers[i])
+            .tag(i)
           }
         })
         .tabViewStyle(.page(indexDisplayMode: .always))
-        .animation(.easeIn, value: tabIndex)
+        .animation(.easeIn, value: model.tabIndex)
         
         Button(action: {
           withAnimation {
-            tabIndex += 1
+            model.nextButton()
           }
           
         }, label: {
-          Text("Next")
+          Text(model.actionTrening.nameButton)
         })
         .buttonStyle(.borderedProminent)
+        .tint(model.actionTrening.color)
       }
             
       .onAppear { }      

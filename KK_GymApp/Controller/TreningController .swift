@@ -20,6 +20,8 @@ class TrainingController: ObservableObject {
   var startTime: Date?
   var stopTime: Date?
   @Published var timeString: String = ""
+  @Published var repsSum: Int = 0
+  @Published var weightSum: Double = 0.0
   
   var trainingPlan: TrainingPlan
   let realm = appRealm.realmTreningShere
@@ -82,6 +84,12 @@ class TrainingController: ObservableObject {
     return String(format: "%02d:%02d", mili / 60, mili % 60)
   }
   
+  func getRepAndVolume() {
+    let result = exercisesSeries.map({ $0.calculateReapeats() })
+    repsSum = result.map({ $0.0 }).reduce(0, +)
+    weightSum = result.map({ $0.1 }).reduce(0, +)
+  }
+  
   enum TreningMode: Int {
     case off, on, done
     
@@ -125,6 +133,9 @@ class TreningExerciseController: ObservableObject {
   @Published var progressTreningControlers: [ProgressTreningControler]
   @Published var tabIndex: Int = 0
   
+  @Published var repsSum: Int = 0
+  @Published var weightSum: Double = 0.0
+  
   init(exercisesPlans: SuperSeriesRl) {
     self.exercisesPlans = exercisesPlans
     self.progressTreningControlers = exercisesPlans.exercise.map {
@@ -156,7 +167,6 @@ class TreningExerciseController: ObservableObject {
     }
   }
   
-  
   private func checkAndIncrementActiveSeries() {
     if tabIndex == 0 {
       activeSeries += 1
@@ -174,6 +184,12 @@ class TreningExerciseController: ObservableObject {
     }
   }
   
+  func calculateReapeats() -> (Int,Double) {
+    let result = progressTreningControlers.map({ $0.getRepeatAndVolume() })
+    repsSum = result.map({ $0.0 }).reduce(0, +)
+    weightSum = result.map({ $0.1 }).reduce(0, +)
+    return (repsSum, weightSum)
+  }
   
   enum ActionTrening: Int {
     case start, save, nextScreen
@@ -216,12 +232,23 @@ class ProgressTreningControler: ObservableObject {
   init(exercisePlan: ExercisePlan) {
     self.exercisePlan = exercisePlan
     self.exercises = ExerciseLp.createArrayModel(jsonString: exercisePlan.series)
-    
+    let count = self.exercises.count
+    self.mode = .init(repeating: .pre, count: count)
   }
   
   
   
-  
+  func getRepeatAndVolume() -> (Int, Double) {
+    let zipp = zip(self.mode, exercises)
+    let doneEx = zipp.filter({ $0.0 == .done })
+    let values = doneEx.map({ ($0.1.repeatEx, $0.1.weight) })
+    
+    let reps = values.map({ $0.0 }).reduce(0, +)
+    let weight = values.map({ $0.1 }).reduce(0, +)
+    
+    return (reps, weight)
+    
+  }
   
   
 }

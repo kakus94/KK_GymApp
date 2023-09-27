@@ -25,12 +25,12 @@ struct TrenigMain: View {
             HStack {
               Text("Powtórzenia")
               Spacer()
-              Text(21.description)
+              Text(model.repsSum.description)
             }
             HStack {
               Text("Objetosść")
               Spacer()
-              Text(2332.description)
+              Text("\(model.weightSum.description) Kg")
             }
           } header: {
             Text("Szczegoly treninigu")
@@ -71,7 +71,9 @@ struct TrenigMain: View {
         .tint(model.treningMode.color)
         
       }
-    
+      .onAppear {
+        model.getRepAndVolume()
+      }
       
     }
 }

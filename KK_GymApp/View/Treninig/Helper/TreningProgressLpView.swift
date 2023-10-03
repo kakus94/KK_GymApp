@@ -17,6 +17,8 @@ struct TreningProgressLpView: View {
   @Binding var kg: Double
   @Binding var active: ModeLp
   
+  let sizeIcon: CGFloat = 25
+  
     var body: some View {
       switch active {
       case .done:
@@ -24,7 +26,7 @@ struct TreningProgressLpView: View {
           
           Image(systemName: "checkmark.diamond.fill")
             .resizable()
-            .frame(width: 30, height: 30, alignment: .center)
+            .frame(width: sizeIcon, height: sizeIcon, alignment: .center)
             .appPadding(.normal,edge: .leading)
             .foregroundColor(.green)
           
@@ -49,7 +51,7 @@ struct TreningProgressLpView: View {
             
             Image(systemName: "\(lp).square.fill")
               .resizable()
-              .frame(width: 30, height: 30, alignment: .center)
+              .frame(width: sizeIcon, height: sizeIcon, alignment: .center)
               .appPadding(.normal,edge: .leading)
               .foregroundColor(.blue)
             
@@ -75,7 +77,7 @@ struct TreningProgressLpView: View {
           
           Image(systemName: "\(lp).square.fill")
             .resizable()
-            .frame(width: 30, height: 30, alignment: .center)
+            .frame(width: sizeIcon, height: sizeIcon, alignment: .center)
             .foregroundColor(.gray)
             .appPadding(.normal,edge: .leading)
           
@@ -96,7 +98,7 @@ struct TreningProgressLpView: View {
             
             Image(systemName: "\(lp).square.fill")
               .resizable()
-              .frame(width: 30, height: 30, alignment: .center)
+              .frame(width: sizeIcon, height: sizeIcon, alignment: .center)
               .appPadding(.normal,edge: .leading)
             
             Spacer()

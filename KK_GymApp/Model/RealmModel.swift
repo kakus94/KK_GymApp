@@ -77,7 +77,28 @@ class TrainingHistory: Object, Identifiable {
 
 
 
-
+extension TrainingPlan {
+  func getRepeatsSum() -> Int {
+    let exerciseLps: [ExerciseLp] = self
+      .exercises
+      .flatMap({ $0.exercise.flatMap({ ExerciseLp.createArrayModel(jsonString: $0.series) })})
+  
+    return exerciseLps.map({ $0.repeatEx }).reduce(0, +)    
+  }
+  
+  func getVolumeSum() -> Int {
+    let exerciseLps: [ExerciseLp] = self
+      .exercises
+      .flatMap({ $0.exercise.flatMap({ ExerciseLp.createArrayModel(jsonString: $0.series) })})
+  
+    return Int(exerciseLps.map({ $0.weight }).reduce(0, +))
+  }
+  
+  func getExerciseCount() -> Int {
+    self.exercises.flatMap( { $0.exercise.map({ $0._id }) }).count
+  }
+  
+}
 
 
 

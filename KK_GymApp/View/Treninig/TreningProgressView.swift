@@ -28,40 +28,46 @@ struct TreningProgressView: View {
   @StateObject var model: ProgressTreningControler
   
   var body: some View {
-    VStack {
       ScrollView {
         videoInstruction
         
         Text(model.exercisePlan.exerciseID!.name)
           .font(.title)
         
-        ForEach(model.exercises.indices, id: \.self) { i in
-          let exercise = model.exercises[i]
-          TreningProgressLpView(lp: exercise.lp,
-                                repsArray: repsArray,
-                                kgArray: kgArray,
-                                reps: Binding(get: { Double(model.exercises[i].repeatEx) },
-                                              set: { model.exercises[i].repeatEx = Int($0) }),
-                                kg:   Binding(get: { Double(model.exercises[i].weight) },
-                                              set: { model.exercises[i].weight = $0 }),
-                                active: $model.mode[i])
-          
-          .onChange(of: x[i], perform: { value in
-            print(value)
-            model.exercises[i].repeatEx = Int(value)
-          })
-          .onChange(of: y[i], perform: { value in
-            print(value)
-            model.exercises[i].weight = value
-          })
-          Divider()
+        
+        VStack {
+          ForEach(model.exercises.indices, id: \.self) { i in
+            let exercise = model.exercises[i]
+            TreningProgressLpView(lp: exercise.lp,
+                                  repsArray: repsArray,
+                                  kgArray: kgArray,
+                                  reps: Binding(get: { Double(model.exercises[i].repeatEx) },
+                                                set: { model.exercises[i].repeatEx = Int($0) }),
+                                  kg:   Binding(get: { Double(model.exercises[i].weight) },
+                                                set: { model.exercises[i].weight = $0 }),
+                                  active: $model.mode[i])
+            
+            .onChange(of: x[i], perform: { value in
+              print(value)
+              model.exercises[i].repeatEx = Int(value)
+            })
+            .onChange(of: y[i], perform: { value in
+              print(value)
+              model.exercises[i].weight = value
+            })
+            
+            if model.exercises.count - 1  != i {
+              Divider()
+            }
+          }
         }
+        .appPadding(.normal)
+        .background(Color.surfaceVariant_)
+        .cornerRadius(10)
+        .appPadding(.small)
       }
-  
-    }
+    .background(Color.background_)
     .onAppear {
-//      exercises = ExerciseLp.createArrayModel(jsonString: exercisePlan.series)
-      
       let url = Bundle.main.url(forResource: "video", withExtension: "mp4")!
       player = AVPlayer(url: url)
       player.play()
@@ -85,6 +91,7 @@ struct TreningProgressView: View {
       }
   }
   
+
   
 }
 

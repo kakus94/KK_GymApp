@@ -13,16 +13,26 @@ struct TreningList: View {
   @ObservedResults(TrainingPlan.self) var trainingPlans
   
     var body: some View {
-      List {
+      ScrollView {
         ForEach(trainingPlans, id: \.self) { treningPlan in
           NavigationLink {            
             TrenigMain(model: .init(trainingPlan: treningPlan))
           } label: {
-            Text(treningPlan.name)
+            TreningTile(title: treningPlan.name,
+                        day: "day",
+                        mainMuscule: treningPlan.desc,
+                        timeComplite: "1:32",
+                        countEx: treningPlan.getExerciseCount(),
+                        repeatEx: treningPlan.getRepeatsSum(),
+                        volume: treningPlan.getVolumeSum())
           }
+          .buttonStyle(PlainButtonStyle())
 
         }
       }
+      .appPadding()
+      .background(Color.background)
+//      .listStyle(.plain)
       
     }
 }

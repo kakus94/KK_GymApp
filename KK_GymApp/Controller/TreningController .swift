@@ -120,12 +120,6 @@ class TrainingController: ObservableObject {
   
 }
 
-protocol ProgressTreningControlerDelegate {
-  
-  func nextButton()
-  
-}
-
 
 class TreningExerciseController: ObservableObject {
   
@@ -136,16 +130,17 @@ class TreningExerciseController: ObservableObject {
   @Published var repsSum: Int = 0
   @Published var weightSum: Double = 0.0
   
+  @Published var actionTrening: ActionTrening = .start
+  
+  var activeSeries: Int = 0
+  
   init(exercisesPlans: SuperSeriesRl) {
     self.exercisesPlans = exercisesPlans
     self.progressTreningControlers = exercisesPlans.exercise.map {
       .init(exercisePlan: $0)
     }
   }
-  
-  @Published var actionTrening: ActionTrening = .start
-  var activeSeries: Int = 0
-  
+    
   func nextButton() {
     let superActive = progressTreningControlers.count > 1
     

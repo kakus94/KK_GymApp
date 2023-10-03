@@ -30,7 +30,7 @@ struct TrenigMain: View {
             HStack {
               Text("Objetosść")
               Spacer()
-              Text("\(model.weightSum.description) Kg")
+              Text("\(Int(model.weightSum) * model.repsSum) Kg")
             }
           } header: {
             Text("Szczegoly treninigu")

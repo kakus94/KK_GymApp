@@ -42,6 +42,7 @@ class Exercise: Object, Identifiable {
   @Persisted var muscleGroups:  MuscleGroup
   @Persisted var mainMuscule:   List<Muscles>
   @Persisted var secondMuscule: List<Muscles>
+  @Persisted var imageData: Data
 }
 
 
@@ -63,7 +64,6 @@ class  TrainingPlan: Object, Identifiable {
   @Persisted var desc: String       // (Opis planu)
   @Persisted var duration: String   // (Czas trwania planu w dniach)
   @Persisted var exercises: List<SuperSeriesRl>  // (Tablica z identyfikatorami ćwiczeń w planie)
-//  @Persisted var superSeries: String?
 }
 
 
@@ -109,7 +109,14 @@ struct appRealm {
   
   //Pamiec tymczasowa podczas treningu 
   static var realmTreningShere: Realm {    
-    let config = Realm.Configuration(fileURL: inLibFolder(fileName: "xxx.realm"), objectTypes: [Exercise.self, ExercisePlan.self, TrainingPlan.self, SuperSeriesRl.self, TrainingHistory.self, UserApp.self, AplicationUser.self])
+    let config = Realm.Configuration(fileURL: inLibFolder(fileName: "x.realm"),
+                                     objectTypes: [Exercise.self,
+                                                   ExercisePlan.self,
+                                                   TrainingPlan.self,
+                                                   SuperSeriesRl.self,
+                                                   TrainingHistory.self,
+                                                   UserApp.self,
+                                                   AplicationUser.self])
     return try! Realm(configuration: config)
   }
   

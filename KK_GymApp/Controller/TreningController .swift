@@ -195,9 +195,6 @@ class TreningExerciseController: ObservableObject {
     }
   }
   
-  @Published var actionTrening: ActionTrening = .start
-  var activeSeries: Int = 0
-  
   
   /// Akcja przycisku w cwiczeniu automatycznie aktualizuje stan widoku 
   func nextButton() {

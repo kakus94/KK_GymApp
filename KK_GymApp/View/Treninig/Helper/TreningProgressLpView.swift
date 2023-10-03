@@ -20,9 +20,7 @@ struct TreningProgressLpView: View {
   let sizeIcon: CGFloat = 25
   
   var body: some View {
-    switch active {
         //seria zakonczona
-    var body: some View {
       switch active {
       case .done:
         HStack(spacing: 10) {

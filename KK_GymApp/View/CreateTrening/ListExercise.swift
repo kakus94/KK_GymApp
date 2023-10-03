@@ -6,13 +6,34 @@
 //
 
 import SwiftUI
+import RealmSwift
 
 struct ListExercise: View {
-    var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+  
+  @ObservedResults(Exercise.self) var exercises
+  
+  var body: some View {
+    NavigationStack {
+      List {
+        ForEach(exercises, id: \.id) { exercise in
+          HStack {
+            Image(systemName: "photo")
+              .resizable()
+              .frame(width: 45, height: 45)
+            VStack {
+              Text(exercise.name)
+//              Text(exercise.category)
+//                .font(.footnote)
+            }
+          }
+        }
+      }
     }
+  }
+  
 }
 
 #Preview {
     ListExercise()
+    .environment(\.realmConfiguration, appRealm.realmTreningShere.configuration)
 }

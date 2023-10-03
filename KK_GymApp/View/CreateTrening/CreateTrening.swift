@@ -11,9 +11,10 @@ import RealmSwift
 struct CreateTrening: View {
   
   @State var trening: TrainingPlan = .init()
-//  @ObservedResults(Exercise.self) var exercises
   
   @State var sheetShow: Bool = true
+  
+
   
     var body: some View {
       Text("Sa")
@@ -26,32 +27,10 @@ struct CreateTrening: View {
 struct CreateTrening_Previews: PreviewProvider {
     static var previews: some View {
         CreateTrening()
-        .environment(\.realmConfiguration, appRealm.realmTreningShere.configuration)
+//        .environment(\.realm, appRealm.realmTreningShere)
+        .environment(\.realmConfiguration, MockRealms.mockTreningPlan().configuration)
     }
 }
 
 
-struct ListExercise: View { 
-  
-  @ObservedResults(Exercise.self) var exercises
-  
-  var body: some View { 
-    NavigationStack { 
-      List { 
-        ForEach(exercises, id: \.id) { exercise in
-          HStack {
-            Image(systemName: "photo")
-              .resizable()
-              .frame(width: 45, height: 45)
-            VStack {
-              Text(exercise.name)
-//              Text(exercise.category)
-//                .font(.footnote)
-            }
-          }
-        }
-      }
-    }
-  }
-  
-}
+

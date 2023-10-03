@@ -16,7 +16,7 @@ struct CreateTrening: View {
   @State var sheetShow: Bool = true
   
     var body: some View {
-Text("Sa")
+      Text("Sa")
         .sheet(isPresented: $sheetShow) { 
           ListExercise()
         }
@@ -26,7 +26,7 @@ Text("Sa")
 struct CreateTrening_Previews: PreviewProvider {
     static var previews: some View {
         CreateTrening()
-        .environment(\.realm, MockRealms.mock())
+        .environment(\.realmConfiguration, appRealm.realmTreningShere.configuration)
     }
 }
 

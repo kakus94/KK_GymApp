@@ -12,9 +12,6 @@ struct TreningExerciseSuperSeries: View {
   
   @ObservedObject var model: TreningExerciseController
   
-//  @State private var exerciseId: Int = -1
-//  @State private var tabIndex: Int = 0
-  
     var body: some View {
       VStack {
         

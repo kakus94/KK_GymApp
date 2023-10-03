@@ -27,6 +27,8 @@ class UserApp: Object, Identifiable {
   @Persisted var height: Double? // (Wzrost użytkownika)
   @Persisted var weight: Double? // (Waga użytkownika)
   @Persisted var profilePicture: String?  // (Ścieżka do profilowego zdjęcia użytkownika)
+  
+  
 }
 
 
@@ -67,12 +69,13 @@ class  TrainingPlan: Object, Identifiable {
 
 class TrainingHistory: Object, Identifiable {
   @Persisted(primaryKey: true) var _id: ObjectId  //(Unikalny identyfikator treningu)
-  @Persisted var UserID:    UserApp?          //(ID użytkownika, który wykonał trening)
-  @Persisted var PlanID:    ExercisePlan?     //(ID planu treningowego, który został wykonany)
-  @Persisted var Date:      Date              //(Data wykonania treningu)
-  @Persisted var Duration:  String            //(Czas trwania treningu)
-  @Persisted var CaloriesBurned:      String  //(Spalone kalorie podczas treningu)
-  @Persisted var ExercisesPerformed:  String  //(Tablica z informacjami o wykonanych ćwiczeniach w treningu, np. identyfikator ćwiczenia, liczba powtórzeń, obciążenie)
+  @Persisted var UserID: UserApp?                 //(ID użytkownika, który wykonał trening)
+  @Persisted var TrainingPlanID: TrainingPlan?    //(ID planu treningowego, który został wykonany)
+  @Persisted var Date: Date                       //(Data wykonania treningu)
+  @Persisted var Duration: String                 //(Czas trwania treningu)
+  @Persisted var CaloriesBurned: Int              //(Spalone kalorie podczas treningu)
+  @Persisted var heartBit: Int                    //Srednie tetno 
+      
 }
 
 
@@ -81,12 +84,15 @@ class TrainingHistory: Object, Identifiable {
 
 
 
-struct appRealm {
-  static var realmTreningShere: Realm {
-    
-    let config = Realm.Configuration(fileURL: inLibFolder(fileName: "xxx.realm"), objectTypes: [Exercise.self, ExercisePlan.self, TrainingPlan.self, SuperSeriesRl.self])
+struct appRealm {  
+  
+  //Pamiec tymczasowa podczas treningu 
+  static var realmTreningShere: Realm {    
+    let config = Realm.Configuration(fileURL: inLibFolder(fileName: "xxx.realm"), objectTypes: [Exercise.self, ExercisePlan.self, TrainingPlan.self, SuperSeriesRl.self, TrainingHistory.self, UserApp.self, AplicationUser.self])
     return try! Realm(configuration: config)
   }
+  
+  //Baza danych synchronizowana z chmura
   static var realmDataBaseShare: Realm {
     let identifier = "database"
     let config = Realm.Configuration(inMemoryIdentifier: identifier)

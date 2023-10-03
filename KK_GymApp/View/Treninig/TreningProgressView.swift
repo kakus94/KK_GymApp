@@ -12,15 +12,10 @@ import RealmSwift
 
 struct TreningProgressView: View {
   
-//  @StateRealmObject var exercisePlan: ExercisePlan
-  
   @State private var player: AVPlayer = AVPlayer()
   @State private var x: [Double] = .init(repeating: 2, count: 6)
   @State private var y:[Double] = .init(repeating: 2, count: 6)
-//  @State private var mode: [ModeLp] = .init(repeating: .done, count: 20)
-  @State private var current: Int = 0
-  
-//  @State private var exercises: [ExerciseLp] = []
+  @State private var current: Int = 0  
   
   private let repsArray = arrayCreate(increment: 1, 0...100)
   private let kgArray = arrayCreate(increment: 0.5, 0...200)
@@ -59,12 +54,11 @@ struct TreningProgressView: View {
       }
   
     }
-    .onAppear {
-//      exercises = ExerciseLp.createArrayModel(jsonString: exercisePlan.series)
-      
+    .onAppear {      
       let url = Bundle.main.url(forResource: "video", withExtension: "mp4")!
       player = AVPlayer(url: url)
       player.play()
+      
   }
   }
   
@@ -77,7 +71,6 @@ struct TreningProgressView: View {
           Button( action: { }) {
             Image(systemName: "info.circle")
               .font(.title)
-//              .appPadding()
           }
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topTrailing)
@@ -87,18 +80,6 @@ struct TreningProgressView: View {
   
   
 }
-
-
-
-
-
-//extension TreningProgressView {
-//  class TreningProgressViewModel: ObservableObject {
-//    
-//  }
-//}
-
-
 
 
 

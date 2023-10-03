@@ -19,6 +19,9 @@ struct TreningProgressLpView: View {
   
   let sizeIcon: CGFloat = 25
   
+  var body: some View {
+    switch active {
+        //seria zakonczona
     var body: some View {
       switch active {
       case .done:
@@ -44,37 +47,35 @@ struct TreningProgressLpView: View {
         .onTapGesture {
           active = .edit
         }
-
+        //Aktywna seria ustalenie powtorzen i wagi
       case .active:
-        VStack {
-          HStack(spacing: 0) {
-            
-            Image(systemName: "\(lp).square.fill")
-              .resizable()
-              .frame(width: sizeIcon, height: sizeIcon, alignment: .center)
-              .appPadding(.normal,edge: .leading)
-              .foregroundColor(.blue)
-            
-            Spacer()
-            
-            PickerTrening(text: "REPS",
-                          reps: repsArray,
-                          index: $reps) { val in
-              Text(String(format: "%.0f", val))
-            }
-            
-            PickerTrening(text: "KG",
-                          reps: kgArray,
-                          index: $kg) { val in
-              Text((val).description)
-            }
-            
-            Spacer()
-          }
-        }
-      case .pre:
-        HStack(spacing: 10) {
+        HStack(spacing: 0) {
           
+          Image(systemName: "\(lp).square.fill")
+            .resizable()
+            .frame(width: 30, height: 30, alignment: .center)
+            .appPadding(.normal,edge: .leading)
+            .foregroundColor(.blue)
+          
+          Spacer()
+          
+          PickerTrening(text: "REPS",
+                        reps: repsArray,
+                        index: $reps) { val in
+            Text(String(format: "%.0f", val))
+          }
+          
+          PickerTrening(text: "KG",
+                        reps: kgArray,
+                        index: $kg) { val in
+            Text((val).description)
+          }
+          
+          Spacer()
+        }
+        // zdefiniowana seria
+      case .pre:
+        HStack(spacing: 10) {          
           Image(systemName: "\(lp).square.fill")
             .resizable()
             .frame(width: sizeIcon, height: sizeIcon, alignment: .center)
@@ -92,6 +93,7 @@ struct TreningProgressLpView: View {
           Text("Obj: \(String(format: "%.1f", repsArray[Int(reps)] * kgArray[Int(kg)])) kg")
           Spacer()
         }
+        //edycja serii
       case .edit:
         VStack {
           HStack(spacing: 0) {
@@ -104,13 +106,13 @@ struct TreningProgressLpView: View {
             Spacer()
             
             PickerTrening(text: "REPS",
-                          reps: arrayCreate(increment: 1, 0...100),
+                          reps: repsArray,
                           index: $reps) { val in
               Text(String(format: "%.0f", repsArray[Int(reps)]))
             }
             
             PickerTrening(text: "KG",
-                          reps: arrayCreate(increment: 0.5, 0...100),
+                          reps: kgArray,
                           index: $kg) { val in
               Text((val).description)
             }
@@ -123,9 +125,9 @@ struct TreningProgressLpView: View {
           })
           .buttonStyle(.borderedProminent)
         }
-      }
-  
     }
+    
+  }
 }
 
 #Preview {

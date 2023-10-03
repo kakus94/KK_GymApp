@@ -10,20 +10,31 @@ import AVKit
 import RealmSwift
 import SwiftUI
 
+
+/// Główny kontroler treningu odpowiedzialny za przeprowadzenie treningu 
 class TrainingController: ObservableObject {
   
+  
+  /// Zawiera tablice do kontrolera kazdego cwiczenia w treningu
   @Published var exercisesSeries: [TreningExerciseController] = []
+  
+  /// aktualny tryb treningu 
   @Published var treningMode: TreningMode = .off
   
-  //Mierzenie czasu treningu
+  /// Mierzenie czasu treningu
   var timer: Timer?
+  
+  /// data startu treningu
   var startTime: Date?
+  
+  /// data zakonczenia treningu
   var stopTime: Date?
   @Published var timeString: String = ""
   @Published var repsSum: Int = 0
   @Published var weightSum: Double = 0.0
   
   var trainingPlan: TrainingPlan
+  
   let realm = appRealm.realmTreningShere
   
   init(trainingPlan: TrainingPlan) {
@@ -32,15 +43,21 @@ class TrainingController: ObservableObject {
     getPlan()
   }
   
+  
+  /// Pobierz plan treningowy 
   func getPlan() {
     trainingPlan.exercises.forEach { superSeries in
       exercisesSeries.append(.init(exercisesPlans: superSeries))
     }
   }
   
+  
+  /// Usuwanie cwiczen ktore wchodzas w sklad super serii
+  /// - Parameters:
+  ///   - array: Tablica wszystkich cwiczen 
+  ///   - of: cwiczenie ktore ma zostac usuniete z tablicy 
   func removeExercisePlanForAllex( array: inout [ExercisePlan], 
-                                   of: ExercisePlan) {
-    print("removeExercisePlanForAllex")
+                                   of: ExercisePlan) {    
     if let indexToRemove = array.firstIndex(where: { $0._id == of._id}) {
       print("Find index \(indexToRemove) count: \(array.count)")
       array.remove(at: indexToRemove)
@@ -48,6 +65,8 @@ class TrainingController: ObservableObject {
     }
   }
  
+  
+  /// Akcja przycisku po zakonczeniu serii poczatek/koniec/zapis
   func startStopButton() {
     switch treningMode {
     case .off:
@@ -55,11 +74,13 @@ class TrainingController: ObservableObject {
     case .on:
       stopTrening()
     case .done:
-      //Save
-      print("Save action")
+        DispatchQueue.main.async {          
+          self.saveTrening()     
+        }
     }
   }
   
+  /// Uruchamia trening i timer treningu 
   private func startTrening() {
     print("startTrening")
     startTime = .now
@@ -72,11 +93,43 @@ class TrainingController: ObservableObject {
     treningMode = .on
   }
   
+  /// zatrzymuje trening 
   private func stopTrening() {
     timer?.invalidate()
     treningMode = .done
   }
   
+  
+  @MainActor
+  private func saveTrening() { 
+    print("Save action")
+    let realmHistory = trainingPlan.realm!.thaw()
+    do {
+      try realmHistory.write { 
+        
+        
+        let history = TrainingHistory()
+        history._id = .generate()
+        history.TrainingPlanID = trainingPlan 
+        history.Date = Date()
+        history.Duration = ((stopTime?.timeIntervalSince1970 ?? 0) - (startTime?.timeIntervalSince1970 ?? 0)).description 
+        history.CaloriesBurned = -1
+        history.heartBit = -1
+        
+        
+        
+        
+        realmHistory.add(history)
+      }
+    } catch {
+      print(error)
+    }
+    
+  }
+  
+  
+  /// Zwraca czas 
+  /// - Returns: zwraca czas w postaci mm:ss
   private func getTimerString() -> String {
     guard let startTime else { return "__-__" }
     let tempDate: Date = .now
@@ -121,6 +174,7 @@ class TrainingController: ObservableObject {
 }
 
 
+/// Kontroler zarzadzajany danym cwiczeniem 
 class TreningExerciseController: ObservableObject {
   
   @Published var exercisesPlans: SuperSeriesRl
@@ -140,7 +194,12 @@ class TreningExerciseController: ObservableObject {
       .init(exercisePlan: $0)
     }
   }
-    
+  
+  @Published var actionTrening: ActionTrening = .start
+  var activeSeries: Int = 0
+  
+  
+  /// Akcja przycisku w cwiczeniu automatycznie aktualizuje stan widoku 
   func nextButton() {
     let superActive = progressTreningControlers.count > 1
     
@@ -169,6 +228,8 @@ class TreningExerciseController: ObservableObject {
     }
   }
   
+  
+  /// Zarzadza przejsciem do kolejnego cwiczenia w super serii 
   private func nextScreen() {
     let newIndex = tabIndex + 1
     if newIndex < exercisesPlans.exercise.count {
@@ -214,7 +275,7 @@ class TreningExerciseController: ObservableObject {
   
 }
 
-
+/// Kontroler zarzadzajacy seria w cwiczeniu 
 class ProgressTreningControler: ObservableObject {
   
   @Published var exercisePlan: ExercisePlan

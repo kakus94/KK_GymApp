@@ -7,6 +7,7 @@
 
 import SwiftUI
 import Combine
+import AppKit
 
 class NewExerciseController: ObservableObject {   
   
@@ -18,6 +19,11 @@ class NewExerciseController: ObservableObject {
   
   private var subscribers: [AnyCancellable] = []
   
+  @Published var ex = Exercise() 
+  @Published var precentUse: CGFloat = 0.0
+  
+  @Published var image = NSImage(systemSymbolName: "photo", accessibilityDescription: nil)
+  
   init() { 
     $musculeGroupSelect
       .sink { 
@@ -26,45 +32,79 @@ class NewExerciseController: ObservableObject {
       .store(in: &subscribers)
   }
   
-  //  deinit { 
-  //    
-  //  }
+  func save() { 
+    let data = jpegDataFrom(image: image!, factor: 0.35)
+    
+    self.musculeGroupSelect.forEach { value in
+      ex.muscleGroups.append( MuscleGroup.init(rawValue: value)! )
+    }
+    
+    self.musculeMainSelect.forEach { value in
+      ex.mainMuscule.append( Muscles.init(rawValue: value)! )
+    }
+    
+    self.musculeSecondSelect.forEach { value in
+      ex.secondMuscule.append( Muscles.init(rawValue: value)! )
+    }
+    
+    ex.imageData = data
+    
+    
+    self.image = NSImage(data: data)
+    
+    print(ex)
+    
+   
+  }
+  
+  func jpegDataFrom(image:NSImage, factor: Double) -> Data {
+    
+    let options: [NSBitmapImageRep.PropertyKey: Any] = [
+           .compressionFactor: factor
+       ]
+          let cgImage = image.cgImage(forProposedRect: nil, context: nil, hints: nil)!
+          let bitmapRep = NSBitmapImageRep(cgImage: cgImage)
+          let jpegData = bitmapRep.representation(using: NSBitmapImageRep.FileType.jpeg, properties: options)!
+          return jpegData
+      }
   
 }
 
 let width: CGFloat = 70
 
-struct NewExerciseView: View {
-  
-  @State var ex = Exercise()
-  
-  @State var precentUse: CGFloat = 0.0
+struct NewExerciseView: View { 
   
   @StateObject var model: NewExerciseController = .init()
   
   var body: some View {
     ScrollView { 
-      EnterText(name: "Nazwa", value: $ex.name)
+      EnterText(name: "Nazwa", value: $model.ex.name)
       
       HStack {
-        EnterText(name: "Opis",type: .textEditor, value: $ex.desc)
-        ImagePicker()
+        EnterText(name: "Opis",type: .textEditor, value: $model.ex.desc)
+        ImagePicker(model: model)
           .padding(.horizontal)
       }
-      CategoryView(value: $ex.category)
+      CategoryView(value: $model.ex.category)
       
-      Slider(value: $precentUse, in: 0.0...1.0, step: 0.01) { 
-        Text("Procent masy ciała \(String(format: "%.0f", precentUse * 100 )) %")
+      Slider(value: $model.precentUse, in: 0.0...1.0, step: 0.01) { 
+        Text("Procent masy ciała \(String(format: "%.0f", model.precentUse * 100 )) %")
+          .frame(width: 170)
       }
-      
-      
+            
       HStack {
         MultiSeletor_MuscleGroup(model: model)
         MultiSelector_Muscule(model: model)
         MultiSelectorSecond_Muscule(model: model)
       }
       
-      
+      Button { 
+        model.save()
+      } label: { 
+        Text("Save")
+      }
+
+            
     }
     .padding()
   }
@@ -86,8 +126,7 @@ struct CategoryView: View {
           Text($0.name)
         }
       }
-      .pickerStyle(.segmented)
-      
+      .pickerStyle(.segmented)      
       
     }
   }
@@ -132,7 +171,7 @@ struct MultiSeletor_MuscleGroup: View {
   let columns = [GridItem(.flexible()), GridItem(.flexible())]
   
   var body: some View {
-    VStack {
+    VStack {     
       
       Text("Grupa mięsni")
       
@@ -216,11 +255,11 @@ struct MultiSelectorSecond_Muscule: View {
 
 struct ImagePicker: View {
   
-  @State var image = NSImage(systemSymbolName: "photo", accessibilityDescription: nil)
   @State private var dragOver = false
-//  Image(systemName: "photo")
+  @ObservedObject var model: NewExerciseController     
+  
   var body: some View {
-    Image(nsImage: image ?? NSImage())
+    Image(nsImage: model.image ?? NSImage())
       .resizable()
       .frame(width: 200, height: 200)
       .onDrop(of: ["public.file-url"], isTargeted: $dragOver) { providers -> Bool in
@@ -228,14 +267,14 @@ struct ImagePicker: View {
           if let data = data, let path = NSString(data: data, encoding: 4), let url = URL(string: path as String) {
             let image = NSImage(contentsOf: url)
             DispatchQueue.main.async {
-              self.image = image
+              self.model.image = image
             }
           }
         })
         return true
       }
       .onDrag {
-        let data = self.image?.tiffRepresentation
+        let data = self.model.image?.tiffRepresentation
         let provider = NSItemProvider(item: data as NSSecureCoding?, typeIdentifier: kUTTypeTIFF as String)
         provider.previewImageHandler = { (handler, _, _) -> Void in
           handler?(data as NSSecureCoding?, nil)
@@ -245,3 +284,15 @@ struct ImagePicker: View {
       .border(dragOver ? Color.red : Color.clear)
   }
 }
+
+
+//extension Image { 
+//  func toData()-> Data {
+////      return self.toUIImage().jpegData(compressionQuality: 1)!
+//    
+//  }
+//
+//  func save(for name: String) {
+//          UserDefaults.standard.setValue(self.toData(), forKey: name)
+//      }
+//}

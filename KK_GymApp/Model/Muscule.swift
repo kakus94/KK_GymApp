@@ -23,7 +23,6 @@ enum MuscleGroup: Int, PersistableEnum, CaseIterable {
   case belly = 12 // brzuch
 }
 
-
 extension MuscleGroup {
   var name: String {
     switch self {
@@ -85,6 +84,7 @@ extension MuscleGroup {
   }
   
 }
+
 
 enum Muscles: Int, PersistableEnum, CaseIterable {
   // Chest Muscles
@@ -279,5 +279,19 @@ enum TypeLoad: Int, PersistableEnum, CaseIterable {
   case weight = 1
   case resilience = 2
   case resistanceBand = 3
+  
+  
+  var name: String { 
+    switch self {
+      case .bodyWeight:
+        return "Masa ciała"
+      case .weight:
+        return " Ciężar"
+      case .resilience:
+        return "Wytrzymalość"
+      case .resistanceBand:
+        return "Gumy"
+    }
+  }
 }
 

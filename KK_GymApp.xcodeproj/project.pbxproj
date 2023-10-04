@@ -36,6 +36,10 @@
 		19E775E72ABF9DF500753710 /* TrenigMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19E775E62ABF9DF500753710 /* TrenigMain.swift */; };
 		19E775E92ABF9F4E00753710 /* TreningExerciseSuperSeries.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19E775E82ABF9F4E00753710 /* TreningExerciseSuperSeries.swift */; };
 		19F175292ACC7E9A00C10812 /* ListExercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19F175282ACC7E9A00C10812 /* ListExercise.swift */; };
+		8E2A6D602ACD3D6B00E301E6 /* NewExerciseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E2A6D5F2ACD3D6B00E301E6 /* NewExerciseView.swift */; };
+		8E2A6D612ACD3F8800E301E6 /* ExerciseModelApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EB3DBCC2AB9B9E800A82BC9 /* ExerciseModelApp.swift */; };
+		8E2A6D622ACD3F8800E301E6 /* Muscule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5A30A22AB3233E00E07869 /* Muscule.swift */; };
+		8E2A6D632ACD3F8800E301E6 /* RealmModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19E775D32ABF6F6000753710 /* RealmModel.swift */; };
 		8E5A30A32AB3233E00E07869 /* Muscule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5A30A22AB3233E00E07869 /* Muscule.swift */; };
 		8E5A30A62AB3309100E07869 /* CreateTrening.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5A30A52AB3309100E07869 /* CreateTrening.swift */; };
 		8E5A30A82AB330A800E07869 /* TreningList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5A30A72AB330A800E07869 /* TreningList.swift */; };
@@ -44,6 +48,12 @@
 		8E7F2B492AB2F1D200013ACD /* SecretFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E7F2B482AB2F1D200013ACD /* SecretFile.swift */; };
 		8E86BDCC2AB082D0009C5DD0 /* DevView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E86BDCB2AB082D0009C5DD0 /* DevView.swift */; };
 		8E86BDCE2AB085A3009C5DD0 /* AddExercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E86BDCD2AB085A3009C5DD0 /* AddExercise.swift */; };
+		8E98FC0A2ACD3C3D00B3391B /* KK_GymManagerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E98FC092ACD3C3D00B3391B /* KK_GymManagerApp.swift */; };
+		8E98FC0C2ACD3C3D00B3391B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E98FC0B2ACD3C3D00B3391B /* ContentView.swift */; };
+		8E98FC0E2ACD3C3E00B3391B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8E98FC0D2ACD3C3E00B3391B /* Assets.xcassets */; };
+		8E98FC112ACD3C3E00B3391B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8E98FC102ACD3C3E00B3391B /* Preview Assets.xcassets */; };
+		8E98FC172ACD3C4D00B3391B /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 8E98FC162ACD3C4D00B3391B /* Realm */; };
+		8E98FC192ACD3C4D00B3391B /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 8E98FC182ACD3C4D00B3391B /* RealmSwift */; };
 		8EA492BC2AB44EA20092884F /* ExColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EA492BB2AB44EA20092884F /* ExColor.swift */; };
 		8EA492BF2AB468820092884F /* HistoryTreningTile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EA492BE2AB468820092884F /* HistoryTreningTile.swift */; };
 		8EA492C12AB468E40092884F /* ExView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EA492C02AB468E40092884F /* ExView.swift */; };
@@ -98,6 +108,7 @@
 		19E775E62ABF9DF500753710 /* TrenigMain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrenigMain.swift; sourceTree = "<group>"; };
 		19E775E82ABF9F4E00753710 /* TreningExerciseSuperSeries.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreningExerciseSuperSeries.swift; sourceTree = "<group>"; };
 		19F175282ACC7E9A00C10812 /* ListExercise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListExercise.swift; sourceTree = "<group>"; };
+		8E2A6D5F2ACD3D6B00E301E6 /* NewExerciseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewExerciseView.swift; sourceTree = "<group>"; };
 		8E5A30A22AB3233E00E07869 /* Muscule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Muscule.swift; sourceTree = "<group>"; };
 		8E5A30A52AB3309100E07869 /* CreateTrening.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTrening.swift; sourceTree = "<group>"; };
 		8E5A30A72AB330A800E07869 /* TreningList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreningList.swift; sourceTree = "<group>"; };
@@ -106,6 +117,12 @@
 		8E7F2B482AB2F1D200013ACD /* SecretFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecretFile.swift; sourceTree = "<group>"; };
 		8E86BDCB2AB082D0009C5DD0 /* DevView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DevView.swift; sourceTree = "<group>"; };
 		8E86BDCD2AB085A3009C5DD0 /* AddExercise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddExercise.swift; sourceTree = "<group>"; };
+		8E98FC072ACD3C3D00B3391B /* KK_GymManager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KK_GymManager.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8E98FC092ACD3C3D00B3391B /* KK_GymManagerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KK_GymManagerApp.swift; sourceTree = "<group>"; };
+		8E98FC0B2ACD3C3D00B3391B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		8E98FC0D2ACD3C3E00B3391B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		8E98FC102ACD3C3E00B3391B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		8E98FC122ACD3C3E00B3391B /* KK_GymManager.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = KK_GymManager.entitlements; sourceTree = "<group>"; };
 		8EA492BB2AB44EA20092884F /* ExColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExColor.swift; sourceTree = "<group>"; };
 		8EA492BE2AB468820092884F /* HistoryTreningTile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTreningTile.swift; sourceTree = "<group>"; };
 		8EA492C02AB468E40092884F /* ExView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExView.swift; sourceTree = "<group>"; };
@@ -138,6 +155,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		8E98FC042ACD3C3D00B3391B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8E98FC192ACD3C4D00B3391B /* RealmSwift in Frameworks */,
+				8E98FC172ACD3C4D00B3391B /* Realm in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -159,6 +185,7 @@
 				1986B4DB2AA62B2E0094843D /* Framework */,
 				1986B4BB2AA626AE0094843D /* KK_GymAppTests */,
 				1986B4C52AA626AE0094843D /* KK_GymAppUITests */,
+				8E98FC082ACD3C3D00B3391B /* KK_GymManager */,
 				1986B4A92AA626AD0094843D /* Products */,
 				19E1E5492AAA14B200D942B7 /* Frameworks */,
 			);
@@ -170,6 +197,7 @@
 				1986B4A82AA626AD0094843D /* KK_GymApp.app */,
 				1986B4B82AA626AE0094843D /* KK_GymAppTests.xctest */,
 				1986B4C22AA626AE0094843D /* KK_GymAppUITests.xctest */,
+				8E98FC072ACD3C3D00B3391B /* KK_GymManager.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -350,6 +378,27 @@
 			path = DevHelper;
 			sourceTree = "<group>";
 		};
+		8E98FC082ACD3C3D00B3391B /* KK_GymManager */ = {
+			isa = PBXGroup;
+			children = (
+				8E98FC092ACD3C3D00B3391B /* KK_GymManagerApp.swift */,
+				8E98FC0B2ACD3C3D00B3391B /* ContentView.swift */,
+				8E2A6D5F2ACD3D6B00E301E6 /* NewExerciseView.swift */,
+				8E98FC0D2ACD3C3E00B3391B /* Assets.xcassets */,
+				8E98FC122ACD3C3E00B3391B /* KK_GymManager.entitlements */,
+				8E98FC0F2ACD3C3E00B3391B /* Preview Content */,
+			);
+			path = KK_GymManager;
+			sourceTree = "<group>";
+		};
+		8E98FC0F2ACD3C3E00B3391B /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				8E98FC102ACD3C3E00B3391B /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -411,6 +460,27 @@
 			productReference = 1986B4C22AA626AE0094843D /* KK_GymAppUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
+		8E98FC062ACD3C3D00B3391B /* KK_GymManager */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8E98FC152ACD3C3E00B3391B /* Build configuration list for PBXNativeTarget "KK_GymManager" */;
+			buildPhases = (
+				8E98FC032ACD3C3D00B3391B /* Sources */,
+				8E98FC042ACD3C3D00B3391B /* Frameworks */,
+				8E98FC052ACD3C3D00B3391B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = KK_GymManager;
+			packageProductDependencies = (
+				8E98FC162ACD3C4D00B3391B /* Realm */,
+				8E98FC182ACD3C4D00B3391B /* RealmSwift */,
+			);
+			productName = KK_GymManager;
+			productReference = 8E98FC072ACD3C3D00B3391B /* KK_GymManager.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -431,6 +501,9 @@
 					1986B4C12AA626AE0094843D = {
 						CreatedOnToolsVersion = 15.0;
 						TestTargetID = 1986B4A72AA626AD0094843D;
+					};
+					8E98FC062ACD3C3D00B3391B = {
+						CreatedOnToolsVersion = 15.0;
 					};
 				};
 			};
@@ -454,6 +527,7 @@
 				1986B4A72AA626AD0094843D /* KK_GymApp */,
 				1986B4B72AA626AE0094843D /* KK_GymAppTests */,
 				1986B4C12AA626AE0094843D /* KK_GymAppUITests */,
+				8E98FC062ACD3C3D00B3391B /* KK_GymManager */,
 			);
 		};
 /* End PBXProject section */
@@ -482,6 +556,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8E98FC052ACD3C3D00B3391B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8E98FC112ACD3C3E00B3391B /* Preview Assets.xcassets in Resources */,
+				8E98FC0E2ACD3C3E00B3391B /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -540,6 +623,19 @@
 			files = (
 				1986B4C92AA626AE0094843D /* KK_GymAppUITestsLaunchTests.swift in Sources */,
 				1986B4C72AA626AE0094843D /* KK_GymAppUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8E98FC032ACD3C3D00B3391B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8E2A6D622ACD3F8800E301E6 /* Muscule.swift in Sources */,
+				8E2A6D632ACD3F8800E301E6 /* RealmModel.swift in Sources */,
+				8E98FC0C2ACD3C3D00B3391B /* ContentView.swift in Sources */,
+				8E98FC0A2ACD3C3D00B3391B /* KK_GymManagerApp.swift in Sources */,
+				8E2A6D602ACD3D6B00E301E6 /* NewExerciseView.swift in Sources */,
+				8E2A6D612ACD3F8800E301E6 /* ExerciseModelApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -816,6 +912,64 @@
 			};
 			name = Release;
 		};
+		8E98FC132ACD3C3E00B3391B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = KK_GymManager/KK_GymManager.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"KK_GymManager/Preview Content\"";
+				DEVELOPMENT_TEAM = HNSKUL3WR3;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 13.6;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.kamil-karpiak.KK-GymManager";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		8E98FC142ACD3C3E00B3391B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = KK_GymManager/KK_GymManager.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"KK_GymManager/Preview Content\"";
+				DEVELOPMENT_TEAM = HNSKUL3WR3;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 13.6;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.kamil-karpiak.KK-GymManager";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -851,6 +1005,15 @@
 			buildConfigurations = (
 				1986B4D32AA626AE0094843D /* Debug */,
 				1986B4D42AA626AE0094843D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8E98FC152ACD3C3E00B3391B /* Build configuration list for PBXNativeTarget "KK_GymManager" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8E98FC132ACD3C3E00B3391B /* Debug */,
+				8E98FC142ACD3C3E00B3391B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -891,6 +1054,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 19E775D92ABF75FD00753710 /* XCRemoteSwiftPackageReference "FLAnimatedImage" */;
 			productName = FLAnimatedImage;
+		};
+		8E98FC162ACD3C4D00B3391B /* Realm */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 19E1E5432AA916EE00D942B7 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = Realm;
+		};
+		8E98FC182ACD3C4D00B3391B /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 19E1E5432AA916EE00D942B7 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = RealmSwift;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

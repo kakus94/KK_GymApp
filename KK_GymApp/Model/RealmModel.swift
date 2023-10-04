@@ -39,7 +39,7 @@ class Exercise: Object, Identifiable {
   @Persisted var desc: String               // opis
   @Persisted var videoURL: String?          // url do wideo
   @Persisted var precentUseBodyMass: Double // procentowy udzial wagi ciala
-  @Persisted var muscleGroups:  MuscleGroup
+  @Persisted var muscleGroups:  List<MuscleGroup>
   @Persisted var mainMuscule:   List<Muscles>
   @Persisted var secondMuscule: List<Muscles>
   @Persisted var imageData: Data

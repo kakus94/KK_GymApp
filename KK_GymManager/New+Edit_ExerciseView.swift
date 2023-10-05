@@ -8,8 +8,9 @@
 import SwiftUI
 import Combine
 import AppKit
+import RealmSwift
 
-class NewExerciseController: ObservableObject {   
+class NewEdit_ExerciseController: ObservableObject {   
   
   @Published var musculeGroupSelect: [Int] = []
   @Published var musculeMainSelect: [Int] = []
@@ -22,51 +23,100 @@ class NewExerciseController: ObservableObject {
   @Published var ex = Exercise() 
   @Published var precentUse: CGFloat = 0.0
   
-  @Published var image = NSImage(systemSymbolName: "photo", accessibilityDescription: nil)
+  @Published var image = NSImage(systemSymbolName: "photo", 
+                                 accessibilityDescription: nil)
   
   init() { 
+    $musculeGroupSelect
+      .sink { 
+        self.musculesToSelect = $0.flatMap({ MuscleGroup(rawValue: $0)!.include })
+      } 
+      .store(in: &subscribers)
+  }
+  
+  init(ex: Exercise) { 
+    self.ex = ex 
+    
+    self.musculeGroupSelect = ex.muscleGroups.map{ $0.rawValue }
+    self.musculeMainSelect = ex.mainMuscule.map{ $0.rawValue }
+    self.musculeSecondSelect = ex.secondMuscule.map{ $0.rawValue }
+    
+    self.precentUse = ex.precentUseBodyMass
+    self.image = NSImage(data: ex.imageData)
+    
     $musculeGroupSelect
       .sink { 
         self.musculesToSelect = $0.map({ .init(rawValue: $0)! })
       } 
       .store(in: &subscribers)
+    
+  }
+  
+  func update() { 
+    do {
+      let realm = try Realm() 
+      try realm.write { 
+        ex.muscleGroups.removeAll() 
+        self.musculeGroupSelect.forEach { value in
+          ex.muscleGroups.append( MuscleGroup.init(rawValue: value)! )
+        }
+        
+        
+      }
+    } catch { 
+      print(error)
+    }
   }
   
   func save() { 
-    let data = jpegDataFrom(image: image!, factor: 0.35)
+    let data = jpegDataFrom(image: image!, factor: 0.35)    
     
-    self.musculeGroupSelect.forEach { value in
-      ex.muscleGroups.append( MuscleGroup.init(rawValue: value)! )
+    do { 
+      
+      let realm = try Realm() 
+      try realm.write {  
+        
+        ex.muscleGroups.removeAll()
+        self.musculeGroupSelect.forEach { value in
+          ex.muscleGroups.append( MuscleGroup.init(rawValue: value)! )
+        }
+        
+        ex.mainMuscule.removeAll()
+        self.musculeMainSelect.forEach { value in
+          ex.mainMuscule.append( Muscles.init(rawValue: value)! )
+        }
+        
+        ex.secondMuscule.removeAll()
+        self.musculeSecondSelect.forEach { value in
+          ex.secondMuscule.append( Muscles.init(rawValue: value)! )
+        }
+        
+        ex.imageData = data
+        
+        
+        self.image = NSImage(data: data)
+        
+        print(ex)  
+        
+        realm.add(ex, update: .all)
+      }
+      
+    } catch { 
+      print(error)
     }
     
-    self.musculeMainSelect.forEach { value in
-      ex.mainMuscule.append( Muscles.init(rawValue: value)! )
-    }
-    
-    self.musculeSecondSelect.forEach { value in
-      ex.secondMuscule.append( Muscles.init(rawValue: value)! )
-    }
-    
-    ex.imageData = data
-    
-    
-    self.image = NSImage(data: data)
-    
-    print(ex)
-    
-   
   }
   
   func jpegDataFrom(image:NSImage, factor: Double) -> Data {
     
     let options: [NSBitmapImageRep.PropertyKey: Any] = [
-           .compressionFactor: factor
-       ]
-          let cgImage = image.cgImage(forProposedRect: nil, context: nil, hints: nil)!
-          let bitmapRep = NSBitmapImageRep(cgImage: cgImage)
-          let jpegData = bitmapRep.representation(using: NSBitmapImageRep.FileType.jpeg, properties: options)!
-          return jpegData
-      }
+      .compressionFactor: factor
+    ]
+    let cgImage = image.cgImage(forProposedRect: nil, context: nil, hints: nil)!
+    let bitmapRep = NSBitmapImageRep(cgImage: cgImage)
+    let jpegData = bitmapRep.representation(using: NSBitmapImageRep.FileType.jpeg, properties: options)!
+    return jpegData
+  }
   
 }
 
@@ -74,7 +124,7 @@ let width: CGFloat = 70
 
 struct NewExerciseView: View { 
   
-  @StateObject var model: NewExerciseController = .init()
+  @StateObject var model: NewEdit_ExerciseController = .init()
   
   var body: some View {
     ScrollView { 
@@ -91,7 +141,7 @@ struct NewExerciseView: View {
         Text("Procent masy ciała \(String(format: "%.0f", model.precentUse * 100 )) %")
           .frame(width: 170)
       }
-            
+      
       HStack {
         MultiSeletor_MuscleGroup(model: model)
         MultiSelector_Muscule(model: model)
@@ -100,18 +150,25 @@ struct NewExerciseView: View {
       
       Button { 
         model.save()
+        //        model.update()
       } label: { 
         Text("Save")
       }
-
-            
+      
+      
     }
     .padding()
+    
+    //Navigation
+    .navigationTitle("Create new exercise")
+    
   }
 }
 
 #Preview {
-  NewExerciseView()
+  NavigationStack {
+    NewExerciseView()
+  }
 }
 
 
@@ -166,7 +223,7 @@ struct EnterText: View {
 
 struct MultiSeletor_MuscleGroup: View {  
   
-  @ObservedObject var model: NewExerciseController
+  @ObservedObject var model: NewEdit_ExerciseController
   
   let columns = [GridItem(.flexible()), GridItem(.flexible())]
   
@@ -184,6 +241,8 @@ struct MultiSeletor_MuscleGroup: View {
           } label: { 
             Text(va.name)
               .frame(maxWidth: .infinity)
+              .fontWeight(.light)
+              .fontDesign(.monospaced)
           }        
           .buttonStyle(.bordered)
           .background(model.musculeGroupSelect.contains(va.rawValue) ? .green : .gray)
@@ -196,7 +255,7 @@ struct MultiSeletor_MuscleGroup: View {
 
 struct MultiSelector_Muscule: View {  
   
-  @ObservedObject var model: NewExerciseController
+  @ObservedObject var model: NewEdit_ExerciseController
   
   let columns = [GridItem(.flexible()), GridItem(.flexible())]
   
@@ -212,6 +271,8 @@ struct MultiSelector_Muscule: View {
           } label: { 
             Text(va.name)
               .frame(maxWidth: .infinity)
+              .fontWeight(.light)
+              .fontDesign(.monospaced)
           }        
           .buttonStyle(.bordered)
           .background(model.musculeMainSelect.contains(va.rawValue) ? .green : .gray)
@@ -225,7 +286,7 @@ struct MultiSelector_Muscule: View {
 
 struct MultiSelectorSecond_Muscule: View {  
   
-  @ObservedObject var model: NewExerciseController
+  @ObservedObject var model: NewEdit_ExerciseController
   
   let columns = [GridItem(.flexible()), GridItem(.flexible())]
   
@@ -241,6 +302,8 @@ struct MultiSelectorSecond_Muscule: View {
           } label: { 
             Text(va.name)
               .frame(maxWidth: .infinity)
+              .fontWeight(.light)
+              .fontDesign(.monospaced)
           }        
           .buttonStyle(.bordered)
           .background(model.musculeSecondSelect.contains(va.rawValue) ? .green : .gray)
@@ -256,7 +319,7 @@ struct MultiSelectorSecond_Muscule: View {
 struct ImagePicker: View {
   
   @State private var dragOver = false
-  @ObservedObject var model: NewExerciseController     
+  @ObservedObject var model: NewEdit_ExerciseController     
   
   var body: some View {
     Image(nsImage: model.image ?? NSImage())

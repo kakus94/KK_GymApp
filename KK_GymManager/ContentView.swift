@@ -8,14 +8,44 @@
 import SwiftUI
 
 struct ContentView: View {
+  
+  @State private var selection: String = "Exercises"
+  
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+      NavigationSplitView { 
+        List(selection: $selection) {   
+          
+          Section("Section") { 
+            Label("Exercises",   systemImage: "photo")
+              .tag("Exercises")
+            Label("Equipment", systemImage: "photo")
+              .tag("Equipment")
+          }          
         }
-        .padding()
+        .listStyle(.sidebar)
+        .safeAreaInset(edge: .bottom) { 
+          NavigationStack {
+            NavigationLink { 
+              NewExerciseView()
+            } label: { 
+              Label("Add exercise", systemImage: "plus.circle")
+            }
+            .buttonStyle(.borderless)
+            .tint(.blue)
+            .padding(.bottom)
+          }
+        }
+      } detail: { 
+        switch selection { 
+          case "Exercises": 
+            ExerciseList()
+          case "Equipment":
+            Text("Equipment list")
+          default: 
+            Text("nil")
+        }
+      }
+
     }
 }
 

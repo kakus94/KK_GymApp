@@ -36,7 +36,7 @@
 		19E775E72ABF9DF500753710 /* TrenigMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19E775E62ABF9DF500753710 /* TrenigMain.swift */; };
 		19E775E92ABF9F4E00753710 /* TreningExerciseSuperSeries.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19E775E82ABF9F4E00753710 /* TreningExerciseSuperSeries.swift */; };
 		19F175292ACC7E9A00C10812 /* ListExercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19F175282ACC7E9A00C10812 /* ListExercise.swift */; };
-		8E2A6D602ACD3D6B00E301E6 /* NewExerciseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E2A6D5F2ACD3D6B00E301E6 /* NewExerciseView.swift */; };
+		8E2A6D602ACD3D6B00E301E6 /* New+Edit_ExerciseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E2A6D5F2ACD3D6B00E301E6 /* New+Edit_ExerciseView.swift */; };
 		8E2A6D612ACD3F8800E301E6 /* ExerciseModelApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EB3DBCC2AB9B9E800A82BC9 /* ExerciseModelApp.swift */; };
 		8E2A6D622ACD3F8800E301E6 /* Muscule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5A30A22AB3233E00E07869 /* Muscule.swift */; };
 		8E2A6D632ACD3F8800E301E6 /* RealmModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19E775D32ABF6F6000753710 /* RealmModel.swift */; };
@@ -48,6 +48,8 @@
 		8E7F2B492AB2F1D200013ACD /* SecretFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E7F2B482AB2F1D200013ACD /* SecretFile.swift */; };
 		8E86BDCC2AB082D0009C5DD0 /* DevView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E86BDCB2AB082D0009C5DD0 /* DevView.swift */; };
 		8E86BDCE2AB085A3009C5DD0 /* AddExercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E86BDCD2AB085A3009C5DD0 /* AddExercise.swift */; };
+		8E922ED42ACEC4C200CA6203 /* ExerciseList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E922ED32ACEC4C200CA6203 /* ExerciseList.swift */; };
+		8E922ED62ACEDA2800CA6203 /* EditExerciseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E922ED52ACEDA2800CA6203 /* EditExerciseView.swift */; };
 		8E98FC0A2ACD3C3D00B3391B /* KK_GymManagerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E98FC092ACD3C3D00B3391B /* KK_GymManagerApp.swift */; };
 		8E98FC0C2ACD3C3D00B3391B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E98FC0B2ACD3C3D00B3391B /* ContentView.swift */; };
 		8E98FC0E2ACD3C3E00B3391B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8E98FC0D2ACD3C3E00B3391B /* Assets.xcassets */; };
@@ -108,7 +110,7 @@
 		19E775E62ABF9DF500753710 /* TrenigMain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrenigMain.swift; sourceTree = "<group>"; };
 		19E775E82ABF9F4E00753710 /* TreningExerciseSuperSeries.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreningExerciseSuperSeries.swift; sourceTree = "<group>"; };
 		19F175282ACC7E9A00C10812 /* ListExercise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListExercise.swift; sourceTree = "<group>"; };
-		8E2A6D5F2ACD3D6B00E301E6 /* NewExerciseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewExerciseView.swift; sourceTree = "<group>"; };
+		8E2A6D5F2ACD3D6B00E301E6 /* New+Edit_ExerciseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "New+Edit_ExerciseView.swift"; sourceTree = "<group>"; };
 		8E5A30A22AB3233E00E07869 /* Muscule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Muscule.swift; sourceTree = "<group>"; };
 		8E5A30A52AB3309100E07869 /* CreateTrening.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTrening.swift; sourceTree = "<group>"; };
 		8E5A30A72AB330A800E07869 /* TreningList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreningList.swift; sourceTree = "<group>"; };
@@ -117,6 +119,8 @@
 		8E7F2B482AB2F1D200013ACD /* SecretFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecretFile.swift; sourceTree = "<group>"; };
 		8E86BDCB2AB082D0009C5DD0 /* DevView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DevView.swift; sourceTree = "<group>"; };
 		8E86BDCD2AB085A3009C5DD0 /* AddExercise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddExercise.swift; sourceTree = "<group>"; };
+		8E922ED32ACEC4C200CA6203 /* ExerciseList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseList.swift; sourceTree = "<group>"; };
+		8E922ED52ACEDA2800CA6203 /* EditExerciseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditExerciseView.swift; sourceTree = "<group>"; };
 		8E98FC072ACD3C3D00B3391B /* KK_GymManager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KK_GymManager.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8E98FC092ACD3C3D00B3391B /* KK_GymManagerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KK_GymManagerApp.swift; sourceTree = "<group>"; };
 		8E98FC0B2ACD3C3D00B3391B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -383,7 +387,9 @@
 			children = (
 				8E98FC092ACD3C3D00B3391B /* KK_GymManagerApp.swift */,
 				8E98FC0B2ACD3C3D00B3391B /* ContentView.swift */,
-				8E2A6D5F2ACD3D6B00E301E6 /* NewExerciseView.swift */,
+				8E922ED32ACEC4C200CA6203 /* ExerciseList.swift */,
+				8E2A6D5F2ACD3D6B00E301E6 /* New+Edit_ExerciseView.swift */,
+				8E922ED52ACEDA2800CA6203 /* EditExerciseView.swift */,
 				8E98FC0D2ACD3C3E00B3391B /* Assets.xcassets */,
 				8E98FC122ACD3C3E00B3391B /* KK_GymManager.entitlements */,
 				8E98FC0F2ACD3C3E00B3391B /* Preview Content */,
@@ -632,9 +638,11 @@
 			files = (
 				8E2A6D622ACD3F8800E301E6 /* Muscule.swift in Sources */,
 				8E2A6D632ACD3F8800E301E6 /* RealmModel.swift in Sources */,
+				8E922ED62ACEDA2800CA6203 /* EditExerciseView.swift in Sources */,
 				8E98FC0C2ACD3C3D00B3391B /* ContentView.swift in Sources */,
+				8E922ED42ACEC4C200CA6203 /* ExerciseList.swift in Sources */,
 				8E98FC0A2ACD3C3D00B3391B /* KK_GymManagerApp.swift in Sources */,
-				8E2A6D602ACD3D6B00E301E6 /* NewExerciseView.swift in Sources */,
+				8E2A6D602ACD3D6B00E301E6 /* New+Edit_ExerciseView.swift in Sources */,
 				8E2A6D612ACD3F8800E301E6 /* ExerciseModelApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
